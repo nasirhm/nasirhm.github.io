@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>badges on Nasir Hussain</title>
+    <link>https://nasirhussain.tech/tags/badges/</link>
+    <description>Recent content in badges on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Apr 2020 06:19:13 +0500</lastBuildDate>
+    
+	<atom:link href="https://nasirhussain.tech/tags/badges/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</title>
+      <link>https://nasirhussain.tech/2020/badge-fedora-centos-social-summit20/</link>
+      <pubDate>Wed, 29 Apr 2020 06:19:13 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/2020/badge-fedora-centos-social-summit20/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about? The Fedora &amp;amp; CentOS Social @ Summit 2020 badge is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this Pagure ticket But what it&amp;rsquo;s all about?
+In short, the Fedora &amp;amp; CentOS Social @ Summit 2020 badge is awarded to people who attended the Red Hat Virtual Summit 2020 &amp;amp; Participated in The Fedora Chatroom on April 28-29.</description>
+    </item>
+    
+  </channel>
+</rss>

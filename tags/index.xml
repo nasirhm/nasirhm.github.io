@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nasir Hussain</title>
+    <link>https://nasirhussain.tech/tags/</link>
+    <description>Recent content in Tags on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:24:11 +0500</lastBuildDate>
+    
+	<atom:link href="https://nasirhussain.tech/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fedora</title>
+      <link>https://nasirhussain.tech/tags/fedora/</link>
+      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/tags/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora-qa</title>
+      <link>https://nasirhussain.tech/tags/fedora-qa/</link>
+      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/tags/fedora-qa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>foss</title>
+      <link>https://nasirhussain.tech/tags/foss/</link>
+      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/tags/foss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qa</title>
+      <link>https://nasirhussain.tech/tags/qa/</link>
+      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/tags/qa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>talks</title>
+      <link>https://nasirhussain.tech/tags/talks/</link>
+      <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
+      
+      <guid>https://nasirhussain.tech/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

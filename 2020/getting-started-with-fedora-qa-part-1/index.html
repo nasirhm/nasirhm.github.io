@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Nasir Hussain">
+  <meta name="description" content="Nasir Hussain - FOSS - Golang - Python - Advocate at Fedora Project">
+  <meta name="keywords" content="golang, fedora, foss, fedoraproject, python, karachi, nasir hussain, nasirhussain">
+  
+  
+  <link rel="next" href="https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-2/" />
+  <link rel="canonical" href="https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Getting Started with Fedora QA - Part 1 | Nasir Hussain
+       
+  </title>
+  <meta name="title" content="Getting Started with Fedora QA - Part 1 | Nasir Hussain">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/nasirhussain.tech\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Getting Started with Fedora QA - Part 1",
+    "headline" : "Getting Started with Fedora QA - Part 1",
+    "description" : "What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.",
+    "inLanguage" : "en-us",
+    "author" : "Nasir Hussain",
+    "creator" : "Nasir Hussain",
+    "publisher": "Nasir Hussain",
+    "accountablePerson" : "Nasir Hussain",
+    "copyrightHolder" : "Nasir Hussain",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-07 17:29:03 \u002b0500 PKT",
+    "dateModified" : "2020-04-07 17:29:03 \u002b0500 PKT",
+    "url" : "https:\/\/nasirhussain.tech\/2020\/getting-started-with-fedora-qa-part-1\/",
+    "wordCount" : "580",
+    "keywords" : [ "fedora","qa","foss","fedora-qa", "Nasir Hussain"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://nasirhussain.tech/">Nasir Hussain</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/talks/" title="">Talks</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/contact/" title="">Contact</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://nasirhussain.tech/">Nasir Hussain</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/talks/" title="">Talks</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/contact/" title="">Contact</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Getting Started with Fedora QA - Part 1</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://nasirhussain.tech/" rel="author">Nasir Hussain</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-04-07 itemprop="datePublished">April 7, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://nasirhussain.tech/categories/fedora/"> fedora </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        <img src="/images/posts-static/getting-started-with-fedora-qa/cover.png" class="featured_image">
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<!-- raw HTML omitted -->
+</blockquote>
+<h2 id="what-is-sqa-quality-assurance-">What is SQA (Quality Assurance) ?</h2>
+<p>According to <a href="https://en.wikipedia.org/wiki/Software_quality_assurance">Wikipedia</a> : <strong>Software quality assurance (SQA)</strong> is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.</p>
+<p>By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.</p>
+<h2 id="why-quality-assurance-is-an-essential-component-for-fedora-project">Why Quality Assurance is an essential component for Fedora Project</h2>
+<p>Fedora is an Open Source Linux distribution Operating System which releases once in every six months and as a result the environment becomes very fast paced and that could make things break among general users of the distro, to prevent that to happening to users &amp; to make sure everything works as expected, Quality Assurance is a must in Fedora Project. In Fedora, we have to encompass the user experience as there are thousands and thousands of people who expect a more stable &amp; feature enriched OS that gets better with each release.</p>
+<h2 id="fedora-release-cycle">Fedora Release Cycle</h2>
+<p>Before we jump into practical tools, let&rsquo;s have a quick introduction to how the process works</p>
+<p><img src="/images/posts-static/getting-started-with-fedora-qa/fedorareleasecycle.png#align:left" alt="Fedora Release Cycle"></p>
+<p>The above diagram displays a clear demonstration of how Fedora creates it&rsquo;s release</p>
+<p>It includes these branches:</p>
+<p><strong>Rawhide</strong> serves as the upstream for the release branch, it&rsquo;s a bleeding edge, non freezing branch where contributors consitently push their packages, after a time slice we branch out different necessary packages and the Rawhide keeps on growing.</p>
+<p><strong>Branched Release</strong> is the version which gets branched out from the ongoing Rawhide &amp; starts to get tested &amp; refines for the release. As we reach this point, the QA team gets hands on with it :)</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="fas-id--httpsadminfedoraprojectorgaccountshttpsadminfedoraprojectorgaccounts">FAS ID : <a href="https://admin.fedoraproject.org/accounts/">https://admin.fedoraproject.org/accounts/</a></h3>
+<p>A FAS (Fedora Account System) account is essential for you to get login access to all subprojects in Fedora with the same user ID and passwords.</p>
+<h3 id="bugzilla--httpsbugzillaredhatcomhttpsbugzillaredhatcom">Bugzilla : <a href="https://bugzilla.redhat.com/">https://bugzilla.redhat.com/</a></h3>
+<p>Bugzilla serves as the bug tracking system for Fedora Project, with Bugzilla you can create &amp; verify bugs along with fixing some! :)</p>
+<p><strong>To register on Bugzilla</strong>, We recommend using your <code>@fedoraproject.org</code> email Alias, because in different places for QA you would require it.</p>
+<p><strong>NOTE</strong> : If you don&rsquo;t have a <code>@fedoraproject.org</code> email Alias, We have a good news for you, you can reach out to us on <a href="https://docs.fedoraproject.org/en-US/fedora-join/">Fedora Join</a> and we can provide you a temporary membership, which would give you the ability to attain your email Alias.</p>
+<p>After setting up your accounts, you can reach out to the <em>QA Team</em> on <strong>IRC</strong>, As it&rsquo;s the place where most of the QA team is available, The channel for Fedora QA is: <code>#fedora-qa</code> and for Matrix users, It&rsquo;s: <code>#freenode_#fedora-qa:matrix.org</code></p>
+<p>Another alternative to IRC, is mailing lists where you can have discussions with Fedora QA team, in case if you need any clarification or being faced by issues. Mailing list requires you to subscribe to it before you can post/ask/talk. The fedora QA mailing list resides here : <a href="https://lists.fedoraproject.org/admin/lists/test.lists.fedoraproject.org/">test</a></p>
+<p>To subscribe to the mailing list you would need a FAS ID too.</p>
+<p>Best of luck for starting QA with Fedora Project.</p>
+<p>The next post would be more about getting involved and hands on with QA.</p>
+<hr>
+<p>Thank You for reading, if you have any doubts or questions feel free to reach out to me here : <a href="/contact/">Contact</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Nasir Hussain </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-1/>https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-1/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank"> This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://nasirhussain.tech/tags/fedora/">
+                    #fedora</a></span>
+            
+            <span class="tag"><a href="https://nasirhussain.tech/tags/qa/">
+                    #qa</a></span>
+            
+            <span class="tag"><a href="https://nasirhussain.tech/tags/foss/">
+                    #foss</a></span>
+            
+            <span class="tag"><a href="https://nasirhussain.tech/tags/fedora-qa/">
+                    #fedora-qa</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://nasirhussain.tech/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-2/" class="next" rel="next" title="Getting Started With Fedora QA - Part 2">Getting Started With Fedora QA - Part 2&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://nasirhussain.tech/">Nasir Hussain</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
