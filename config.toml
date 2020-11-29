@@ -63,7 +63,7 @@ preserveTaxonomyNames = true
    
     description = "Nasir Hussain - FOSS - Golang - Python - Advocate at Fedora Project" # site description
     keywords = "golang, fedora, foss, fedoraproject, python, karachi, nasir hussain, nasirhussain" # site keywords
-
+    google_analytics = "UA-153555506-2"
     beian = ""
     baiduAnalytics = ""
 
