@@ -2,57 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nasir Hussain</title>
-    <link>https://nasirhussain.tech/tags/</link>
+    <link>https://nasirhm.github.io/tags/</link>
     <description>Recent content in Tags on Nasir Hussain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:24:11 +0500</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 02:56:46 +0500</lastBuildDate>
     
-	<atom:link href="https://nasirhussain.tech/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nasirhm.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>fedora</title>
-      <link>https://nasirhussain.tech/tags/fedora/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      <title>badges</title>
+      <link>https://nasirhm.github.io/tags/badges/</link>
+      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/tags/fedora/</guid>
+      <guid>https://nasirhm.github.io/tags/badges/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>https://nasirhm.github.io/tags/fedora/</link>
+      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
+      
+      <guid>https://nasirhm.github.io/tags/fedora/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fedora-qa</title>
-      <link>https://nasirhussain.tech/tags/fedora-qa/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      <link>https://nasirhm.github.io/tags/fedora-qa/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/tags/fedora-qa/</guid>
+      <guid>https://nasirhm.github.io/tags/fedora-qa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>foss</title>
-      <link>https://nasirhussain.tech/tags/foss/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      <link>https://nasirhm.github.io/tags/foss/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/tags/foss/</guid>
+      <guid>https://nasirhm.github.io/tags/foss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qa</title>
-      <link>https://nasirhussain.tech/tags/qa/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      <link>https://nasirhm.github.io/tags/qa/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/tags/qa/</guid>
+      <guid>https://nasirhm.github.io/tags/qa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>talks</title>
-      <link>https://nasirhussain.tech/tags/talks/</link>
+      <link>https://nasirhm.github.io/tags/talks/</link>
       <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/tags/talks/</guid>
+      <guid>https://nasirhm.github.io/tags/talks/</guid>
       <description></description>
     </item>
     

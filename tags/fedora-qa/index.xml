@@ -2,30 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fedora-qa on Nasir Hussain</title>
-    <link>https://nasirhussain.tech/tags/fedora-qa/</link>
+    <link>https://nasirhm.github.io/tags/fedora-qa/</link>
     <description>Recent content in fedora-qa on Nasir Hussain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:24:11 +0500</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 17:29:03 +0500</lastBuildDate>
     
-	<atom:link href="https://nasirhussain.tech/tags/fedora-qa/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nasirhm.github.io/tags/fedora-qa/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Getting Started With Fedora QA - Part 2</title>
-      <link>https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-2/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
-      
-      <guid>https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-2/</guid>
-      <description>Your next steps towards Fedora QA This is a continuation of the previous post Getting Started with Fedora QA - Part 1</description>
-    </item>
     
     <item>
       <title>Getting Started with Fedora QA - Part 1</title>
-      <link>https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-1/</link>
+      <link>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</link>
       <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/2020/getting-started-with-fedora-qa-part-1/</guid>
+      <guid>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</guid>
       <description>What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.</description>
     </item>
     

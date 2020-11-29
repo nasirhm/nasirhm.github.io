@@ -1,28 +1,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nasir Hussain on Nasir Hussain</title>
-    <link>https://nasirhussain.tech/</link>
+    <link>https://nasirhm.github.io/</link>
     <description>Recent content in Nasir Hussain on Nasir Hussain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:24:11 +0500</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 02:56:46 +0500</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Posts</title>
-      <link>https://nasirhussain.tech/posts/</link>
-      <pubDate>Wed, 08 Apr 2020 00:24:11 +0500</pubDate>
+      <link>https://nasirhm.github.io/posts/</link>
+      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/posts/</guid>
+      <guid>https://nasirhm.github.io/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact &amp; Social Network accounts</title>
-      <link>https://nasirhussain.tech/contact/</link>
+      <link>https://nasirhm.github.io/contact/</link>
       <pubDate>Mon, 06 Apr 2020 03:55:11 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/contact/</guid>
+      <guid>https://nasirhm.github.io/contact/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;IRC Nick:
 &lt;ul&gt;
@@ -55,10 +55,10 @@
     
     <item>
       <title>Nasir is</title>
-      <link>https://nasirhussain.tech/about/</link>
+      <link>https://nasirhm.github.io/about/</link>
       <pubDate>Mon, 06 Apr 2020 03:38:58 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/about/</guid>
+      <guid>https://nasirhm.github.io/about/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;He/His/Him&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FOSS&lt;/a&gt; Enthusiast &amp;amp; Evangelist&lt;/li&gt;
@@ -75,17 +75,17 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;contact--social-network-accounts&#34;&gt;Contact &amp;amp; Social Network Accounts&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nasirhussain.tech/contact/&#34;&gt;Contact Page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nasirhm.github.io/contact/&#34;&gt;Contact Page&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>Talks</title>
-      <link>https://nasirhussain.tech/talks/</link>
+      <link>https://nasirhm.github.io/talks/</link>
       <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
       
-      <guid>https://nasirhussain.tech/talks/</guid>
+      <guid>https://nasirhm.github.io/talks/</guid>
       <description></description>
     </item>
     
