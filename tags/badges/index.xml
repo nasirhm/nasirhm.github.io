@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>badges on Nasir Hussain</title>
+    <title>badges on Nasir Hussain&#39;s Blog</title>
     <link>https://nasirhm.github.io/tags/badges/</link>
-    <description>Recent content in badges on Nasir Hussain</description>
+    <description>Recent content in badges on Nasir Hussain&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 02:56:46 +0500</lastBuildDate>
+    <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
+    <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
+    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/tags/badges/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</title>
+      <link>https://nasirhm.github.io/2020/badge-i-voted-f33/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
+      <guid>https://nasirhm.github.io/2020/badge-i-voted-f33/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+I Voted Fedora 33: What it&amp;rsquo;s about? The I Voted Fedora 33 Badge is categorized as Community Badge and it&amp;rsquo;s defined in this Pagure Ticket
+But What it&amp;rsquo;s all About ? In short, it&amp;rsquo;s what it says in the Description : &amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;. It is awarded to people who vote in the Fedora Elections.</description>
+    </item>
+    
+    <item>
       <title>Gotta Badge &#39;Em All: Fedora Social Panda</title>
       <link>https://nasirhm.github.io/2020/badge-fedora-social-hour/</link>
       <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/badge-fedora-social-hour/</guid>
       <description>This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
 Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-19 is getting pretty real and resulting in people performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated so out Fedora Project Leader Matthew Miller &amp;amp; Fedora Project Contributor Neal Gompa had the idea to have a Fedora Social Hour where folks could Chat &amp;amp; get a little e-human contact and conversation.</description>
@@ -25,7 +37,7 @@ Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-
       <title>Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</title>
       <link>https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/</link>
       <pubDate>Wed, 29 Apr 2020 06:19:13 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/</guid>
       <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
 Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about? The Fedora &amp;amp; CentOS Social @ Summit 2020 badge is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this Pagure ticket But what it&amp;rsquo;s all about?

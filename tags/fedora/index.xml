@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fedora on Nasir Hussain</title>
+    <title>fedora on Nasir Hussain&#39;s Blog</title>
     <link>https://nasirhm.github.io/tags/fedora/</link>
-    <description>Recent content in fedora on Nasir Hussain</description>
+    <description>Recent content in fedora on Nasir Hussain&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 02:56:46 +0500</lastBuildDate>
+    <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
+    <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
+    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</title>
+      <link>https://nasirhm.github.io/2020/badge-i-voted-f33/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
+      <guid>https://nasirhm.github.io/2020/badge-i-voted-f33/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+I Voted Fedora 33: What it&amp;rsquo;s about? The I Voted Fedora 33 Badge is categorized as Community Badge and it&amp;rsquo;s defined in this Pagure Ticket
+But What it&amp;rsquo;s all About ? In short, it&amp;rsquo;s what it says in the Description : &amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;. It is awarded to people who vote in the Fedora Elections.</description>
+    </item>
+    
+    <item>
       <title>Gotta Badge &#39;Em All: Fedora Social Panda</title>
       <link>https://nasirhm.github.io/2020/badge-fedora-social-hour/</link>
       <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/badge-fedora-social-hour/</guid>
       <description>This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
 Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-19 is getting pretty real and resulting in people performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated so out Fedora Project Leader Matthew Miller &amp;amp; Fedora Project Contributor Neal Gompa had the idea to have a Fedora Social Hour where folks could Chat &amp;amp; get a little e-human contact and conversation.</description>
@@ -25,7 +37,7 @@ Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-
       <title>Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</title>
       <link>https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/</link>
       <pubDate>Wed, 29 Apr 2020 06:19:13 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/</guid>
       <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
 Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about? The Fedora &amp;amp; CentOS Social @ Summit 2020 badge is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this Pagure ticket But what it&amp;rsquo;s all about?
@@ -36,7 +48,7 @@ In short, the Fedora &amp;amp; CentOS Social @ Summit 2020 badge is awarded to p
       <title>Getting Started with Fedora QA - Part 1</title>
       <link>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</link>
       <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</guid>
       <description>What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.</description>
     </item>
@@ -45,7 +57,7 @@ In short, the Fedora &amp;amp; CentOS Social @ Summit 2020 badge is awarded to p
       <title>Introduction to FOSS and Fedora Project</title>
       <link>https://nasirhm.github.io/talks/intro-foss-and-fedora-15-02-20/</link>
       <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/talks/intro-foss-and-fedora-15-02-20/</guid>
       <description>Introduction to Free and Open Source Software and Fedora Project Originally presented at Fedora 31 Release Party Karachi on 15th Feb 2020 in Karachi, Pakistan
 Key points  What is FOSS, Free and Open Source Software Perks of contributing to a FOSS What is Fedora Project  Four Foundations   Where to contribute How to start contributing  Slides Google Slides</description>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>qa on Nasir Hussain</title>
+    <title>qa on Nasir Hussain&#39;s Blog</title>
     <link>https://nasirhm.github.io/tags/qa/</link>
-    <description>Recent content in qa on Nasir Hussain</description>
+    <description>Recent content in qa on Nasir Hussain&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
+    <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
     <lastBuildDate>Tue, 07 Apr 2020 17:29:03 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/tags/qa/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +16,7 @@
       <title>Getting Started with Fedora QA - Part 1</title>
       <link>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</link>
       <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/</guid>
       <description>What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.</description>
     </item>

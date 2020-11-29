@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Nasir Hussain</title>
+    <title>Categories on Nasir Hussain&#39;s Blog</title>
     <link>https://nasirhm.github.io/categories/</link>
-    <description>Recent content in Categories on Nasir Hussain</description>
+    <description>Recent content in Categories on Nasir Hussain&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 02:56:46 +0500</lastBuildDate>
+    <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
+    <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
+    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,8 +15,8 @@
     <item>
       <title>fedora</title>
       <link>https://nasirhm.github.io/categories/fedora/</link>
-      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
-      
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/categories/fedora/</guid>
       <description></description>
     </item>
@@ -24,7 +25,7 @@
       <title>Talks</title>
       <link>https://nasirhm.github.io/categories/talks/</link>
       <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
-      
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
       <guid>https://nasirhm.github.io/categories/talks/</guid>
       <description></description>
     </item>
