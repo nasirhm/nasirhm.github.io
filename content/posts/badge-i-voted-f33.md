@@ -5,7 +5,7 @@ tags: ["fedora", "badges"]
 categories: [fedora]
 ---
 
-![I Voted: Fedora 33 -- Participated in the Fedora 33 Elections](/images/posts-static/gotta-fedora-badges/i-voted-f32.png)
+![I Voted: Fedora 33 -- Participated in the Fedora 33 Elections](/images/posts-static/gotta-fedora-badges/i-voted-f33.png)
 
 *This article is inspired by Justin W. Flory's Gotta Badge `em All series about [how to earn specific Fedora badges](https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/).*
 
