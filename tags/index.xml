@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
     <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
-    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 01:58:48 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nix</title>
+      <link>https://nasirhm.github.io/tags/nix/</link>
+      <pubDate>Wed, 16 Dec 2020 01:58:48 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
+      <guid>https://nasirhm.github.io/tags/nix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nix-packages</title>
+      <link>https://nasirhm.github.io/tags/nix-packages/</link>
+      <pubDate>Wed, 16 Dec 2020 01:58:48 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
+      <guid>https://nasirhm.github.io/tags/nix-packages/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>badges</title>

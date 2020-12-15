@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nasirhm.github.io/tags/badges/</loc>
-    <lastmod>2020-11-30T03:04:54+05:00</lastmod>
+    <loc>https://nasirhm.github.io/categories/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nasirhm.github.io/categories/</loc>
+    <loc>https://nasirhm.github.io/2020/getting-started-with-nix-introduction/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/categories/nix/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/tags/nix/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/tags/nix-packages/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/posts/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/tags/</loc>
+    <lastmod>2020-12-16T01:58:48+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nasirhm.github.io/tags/badges/</loc>
     <lastmod>2020-11-30T03:04:54+05:00</lastmod>
   </url>
   
@@ -24,21 +59,6 @@
   
   <url>
     <loc>https://nasirhm.github.io/2020/badge-i-voted-f33/</loc>
-    <lastmod>2020-11-30T03:04:54+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nasirhm.github.io/</loc>
-    <lastmod>2020-11-30T03:04:54+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nasirhm.github.io/posts/</loc>
-    <lastmod>2020-11-30T03:04:54+05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nasirhm.github.io/tags/</loc>
     <lastmod>2020-11-30T03:04:54+05:00</lastmod>
   </url>
   

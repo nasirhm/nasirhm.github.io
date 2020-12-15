@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>nasirhussainm14@gmail.com (Nasir Hussain)</managingEditor>
     <webMaster>nasirhussainm14@gmail.com (Nasir Hussain)</webMaster>
-    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 01:58:48 +0500</lastBuildDate>
     
 	<atom:link href="https://nasirhm.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting Started With Nix, Introduction</title>
+      <link>https://nasirhm.github.io/2020/getting-started-with-nix-introduction/</link>
+      <pubDate>Wed, 16 Dec 2020 01:58:48 +0500</pubDate>
+      <author>nasirhussainm14@gmail.com (Nasir Hussain)</author>
+      <guid>https://nasirhm.github.io/2020/getting-started-with-nix-introduction/</guid>
+      <description>Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This Blogpost series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.
+Nix is also the primary package manager for NixOS and can be installed as an additional package manager on Linux and Mac OS X.</description>
+    </item>
     
     <item>
       <title>Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</title>

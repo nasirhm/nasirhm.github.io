@@ -7,7 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts - Nasir Hussain&#39;s Blog</title>
+  <title>Getting Started With Nix, Introduction - Nasir Hussain&#39;s Blog</title>
+  <meta name="description" content="Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This Blogpost series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.
+Nix is also the primary package manager for NixOS and can be installed as an additional package manager on Linux and Mac OS X.">
   <meta name="author" content="Nasir Hussain"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +32,68 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/nasirhm.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/nasirhm.github.io\/2020\/getting-started-with-nix-introduction\/",
+          "name": "Getting started with nix, introduction"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Nasir Hussain"
+  },
+  "headline": "Getting Started With Nix, Introduction",
+  "description" : "Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.\nThis Blogpost series provides an introduction to the Nix package manager and how it works.\nWhat is Nix? Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.\nNix is also the primary package manager for NixOS and can be installed as an additional package manager on Linux and Mac OS X.",
+  "inLanguage" : "en",
+  "wordCount":  464 ,
+  "datePublished" : "2020-12-16T01:58:48",
+  "dateModified" : "2020-12-16T01:58:48",
+  "image" : "https:\/\/nasirhm.github.io\/img\/avatar-icon.png",
+  "keywords" : [ "nix, nix-packages" ],
+  "mainEntityOfPage" : "https:\/\/nasirhm.github.io\/2020\/getting-started-with-nix-introduction\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/nasirhm.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/nasirhm.github.io\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="Getting Started With Nix, Introduction" />
+<meta property="og:description" content="Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This Blogpost series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.
+Nix is also the primary package manager for NixOS and can be installed as an additional package manager on Linux and Mac OS X.">
 <meta property="og:image" content="https://nasirhm.github.io/img/avatar-icon.png" />
-<meta property="og:url" content="https://nasirhm.github.io/posts/" />
+<meta property="og:url" content="https://nasirhm.github.io/2020/getting-started-with-nix-introduction/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Nasir Hussain&#39;s Blog" />
 
-  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:title" content="Getting Started With Nix, Introduction" />
+  <meta name="twitter:description" content="Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This Blogpost …">
   <meta name="twitter:image" content="https://nasirhm.github.io/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@_nasirhm_" />
@@ -188,7 +246,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
               
-                <h1>Posts</h1>
+                <h1>Getting Started With Nix, Introduction</h1>
               
               
                 <hr class="small">
@@ -204,274 +262,141 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient
+and simpler.</p>
+<p>This Blogpost series provides an introduction to the Nix package manager and how it works.</p>
+<h2 id="what-is-nix">What is Nix?</h2>
+<p>Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.</p>
+<p>Nix is also the primary package manager for <strong>NixOS</strong> and can be installed as an additional package manager on Linux and Mac OS X.</p>
+<p>It also offers the following features:</p>
+<ul>
+<li>Atomic Upgrades and Rollbacks.</li>
+<li>Multiple versions of a package.</li>
+<li>Multi-user package management, the ability to install certain packages for certain users only.</li>
+<li>Effortless setup of build environments for a package, providing functional builds.</li>
+<li>and many more.</li>
+</ul>
+<h2 id="how-nix-works">How Nix works?</h2>
+<p>Packages in the Nix ecosystem are built from Nix expressions, which is a simple functional language that enables the packaging aspect for Nix (The package manager).</p>
+<p>A Nix expression describes everything that goes into a package build, e.g: other packages (dependencies), sources, config files, environment variables, external patches, etc.</p>
+<p>A Nix expression results in a derivation, which is a build of the expression, which takes some inputs and produces an output, outputs are almost always some <code>/nix/store/some-hash-pkg-name</code> path.</p>
+<p>Following is an abstract diagram of how Nix expressions work:</p>
+<p><img src="/images/posts-static/nix-pkg-101/nix-expression-101.png" alt="How Nix Expressions work"></p>
+<p>As you can see above, we&rsquo;ve got an application written in C language and we&rsquo;re creating a Nix expression for it, which includes some code patches, dependencies, configurations, and the resultant derivation is created in the Nix Store.</p>
+<h3 id="the-essence-of-nix-in-comparison-to-traditional-linux-systems">The essence of Nix in comparison to traditional Linux systems:</h3>
+<p>Nix emerges from the idea that, <strong>FHS (Filesystem Hierarchy Standard) is fundamentally incompatible with reproducibility</strong>, let me explain:</p>
+<p>With traditional Linux systems and package managers, You&rsquo;ll find paths like <code>/usr/bin/python</code> or <code>/lib/libm.so</code> where packages are installed, there are a lot of things that we don&rsquo;t know about the file that&rsquo;s there, for example:</p>
+<ul>
+<li>What&rsquo;s the version of the package the binary/library came from?</li>
+<li>What are the libraries it uses?</li>
+<li>What configure flags were enabled during the build?</li>
+</ul>
+<p>The questions mentioned above have a significant effect on the resulted build and can change the behavior of the application.</p>
+<p>Indeed, there are ways to get around this in FHS, for example, we can link directly to <code>/lib/libm.so</code> or use <code>/usr/bin/python3.7</code> in our shebang, but there are still a lot of unknowns.</p>
+<p>Nix plays a pretty essential role in fixing it, by isolating the build itself resulting in reproducible build artifacts.</p>
+<p>On Nix systems, You&rsquo;ll find your the file paths like: <code>/nix/store/&lt;hash&gt;-&lt;name&gt;-&lt;version&gt;</code>.</p>
+<p>If there&rsquo;s something you&rsquo;re unable to grasp, No worries, we&rsquo;ll be exploring Nix further in the future with the series.</p>
+<p>Thank You for reading. In the next posts, we will install Nix and build some Nix expressions ourselves.</p>
+
+
         
-        <div class="posts-list">
+          <div class="blog-tags">
+            
+              <a href="https://nasirhm.github.io/tags/nix/">nix</a>&nbsp;
+            
+              <a href="https://nasirhm.github.io/tags/nix-packages/">nix-packages</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f&amp;text=Getting%20Started%20With%20Nix%2c%20Introduction&amp;via=_nasirhm_" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f&amp;title=Getting%20Started%20With%20Nix%2c%20Introduction" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f&amp;title=Getting%20Started%20With%20Nix%2c%20Introduction" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f&amp;title=Getting%20Started%20With%20Nix%2c%20Introduction" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fnasirhm.github.io%2f2020%2fgetting-started-with-nix-introduction%2f&amp;description=Getting%20Started%20With%20Nix%2c%20Introduction" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://nasirhm.github.io/2020/getting-started-with-nix-introduction/">
-        <h2 class="post-title">Getting Started With Nix, Introduction</h2>
-        
-        
-        
-    </a>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 16, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;464&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Nasir Hussain
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient and simpler.
-This Blogpost series provides an introduction to the Nix package manager and how it works.
-What is Nix? Nix is a powerful, purely functional package manager designed for reliable and reproducible package management.
-Nix is also the primary package manager for NixOS and can be installed as an additional package manager on Linux and Mac OS X.
-        <a href="https://nasirhm.github.io/2020/getting-started-with-nix-introduction/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nasirhm.github.io/tags/nix/">nix</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/nix-packages/">nix-packages</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-            <article class="post-preview">
-    <a href="https://nasirhm.github.io/2020/badge-i-voted-f33/">
-        <h2 class="post-title">Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</h2>
         
-        
-        
-    </a>
+      </article>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 30, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;476&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Nasir Hussain
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This article is inspired by Justin W. Flory&rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
-I Voted Fedora 33: What it&rsquo;s about? The I Voted Fedora 33 Badge is categorized as Community Badge and it&rsquo;s defined in this Pagure Ticket
-But What it&rsquo;s all About ? In short, it&rsquo;s what it says in the Description : &ldquo;You participated in Fedora 33 Elections&rdquo;. It is awarded to people who vote in the Fedora Elections.
-        <a href="https://nasirhm.github.io/2020/badge-i-voted-f33/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nasirhm.github.io/tags/fedora/">fedora</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/badges/">badges</a>&nbsp;
-        
-    </div>
-    
-
-</article>
+      
+        <ul class="pager blog-pager">
           
-            <article class="post-preview">
-    <a href="https://nasirhm.github.io/2020/badge-fedora-social-hour/">
-        <h2 class="post-title">Gotta Badge &#39;Em All: Fedora Social Panda</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 1, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;304&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Nasir Hussain
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This article is originally inspired by Justin W. Flory&rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
-Fedora Social Panda: What&rsquo;s it about? How It all Started is, As COVID-19 is getting pretty real and resulting in people performing social distancing, shelter-in-place &amp; Lockdowns resulting in most of us feeling pretty isolated so out Fedora Project Leader Matthew Miller &amp; Fedora Project Contributor Neal Gompa had the idea to have a Fedora Social Hour where folks could Chat &amp; get a little e-human contact and conversation.
-        <a href="https://nasirhm.github.io/2020/badge-fedora-social-hour/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nasirhm.github.io/tags/fedora/">fedora</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/badges/">badges</a>&nbsp;
-        
-    </div>
-    
-
-</article>
+            <li class="previous">
+              <a href="https://nasirhm.github.io/2020/badge-i-voted-f33/" data-toggle="tooltip" data-placement="top" title="Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!">&larr; Previous Post</a>
+            </li>
           
-            <article class="post-preview">
-    <a href="https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/">
-        <h2 class="post-title">Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 29, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;264&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Nasir Hussain
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This article is inspired by Justin W. Flory&rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
-Fedora &amp; CentOS Social @ Summit 2020: What&rsquo;s it about? The Fedora &amp; CentOS Social @ Summit 2020 badge is categorized as a &ldquo;Event Badge&rdquo; and it&rsquo;s defined in this Pagure ticket But what it&rsquo;s all about?
-In short, the Fedora &amp; CentOS Social @ Summit 2020 badge is awarded to people who attended the Red Hat Virtual Summit 2020 &amp; Participated in The Fedora Chatroom on April 28-29.
-        <a href="https://nasirhm.github.io/2020/badge-fedora-centos-social-summit20/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://nasirhm.github.io/tags/fedora/">fedora</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/badges/">badges</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-            <article class="post-preview">
-    <a href="https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/">
-        <h2 class="post-title">Getting Started with Fedora QA - Part 1</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 7, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;580&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Nasir Hussain
-    
-  
-  
-</span>
+        </ul>
+      
 
 
-    </p>
-    <div class="post-entry">
+      
         
-        What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.
-        <a href="https://nasirhm.github.io/2020/getting-started-with-fedora-qa-part-1/" class="post-read-more">[Read More]</a>
         
-    </div>
+      
 
-    
-    <div class="blog-tags">
-        
-        <a href="https://nasirhm.github.io/tags/fedora/">fedora</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/qa/">qa</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/foss/">foss</a>&nbsp;
-        
-        <a href="https://nasirhm.github.io/tags/fedora-qa/">fedora-qa</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-        </div>
-        
-      </div>
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -514,7 +439,7 @@ In short, the Fedora &amp; CentOS Social @ Summit 2020 badge is awarded to peopl
               </li>
           
           <li>
-            <a href="/posts/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
