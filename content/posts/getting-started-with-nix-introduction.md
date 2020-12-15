@@ -3,7 +3,6 @@ title: "Getting Started With Nix, Introduction"
 date: 2020-12-16T01:58:48+05:00
 tags: ["nix", "nix-packages"]
 categories: ["Nix"]
-draft: true
 ---
 
 Recently, I installed NixOS on one of my machines to explore the Nix ecosystem and how it makes the process of creating deterministic and reproducible builds efficient
