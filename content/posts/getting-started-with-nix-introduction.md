@@ -58,3 +58,6 @@ If there's something you're unable to grasp...No worries! We'll be exploring Nix
 
 Thank you for reading. In the next posts, we will be installing Nix and building some Nix expressions ourselves.
 
+---
+
+Thank you very much [cateroxl](https://cateroxl.github.io) and [Hira Tariq](https://twitter.com/HiraT97) for proofreading and providing your valuable feedback on the blog post.
