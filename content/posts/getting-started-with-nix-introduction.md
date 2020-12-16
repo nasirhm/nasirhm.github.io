@@ -1,5 +1,5 @@
 ---
-title: "Getting Started With Nix, Introduction"
+title: "Getting Started With Nix: Introduction"
 date: 2020-12-16T01:58:48+05:00
 tags: ["nix", "nix-packages"]
 categories: ["Nix"]
