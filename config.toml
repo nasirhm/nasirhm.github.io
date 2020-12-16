@@ -8,7 +8,7 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 #disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+googleAnalytics = "G-F67DV7S0JL"
 
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
