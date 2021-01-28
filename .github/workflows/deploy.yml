@@ -1,0 +1,24 @@
+name: Build and Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - hugo-devel
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout hugo-devel
+        uses: actions/checkout@v2
+        with:
+          ref: hugo-devel
+      - name: Hugo Deploy to Github Pages
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.80.0
+          TARGET_REPO: nasirhm/nasirhm.github.io
+          TARGET_BRANCH: main
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '-t beautifulhugo'
