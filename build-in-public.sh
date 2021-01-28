@@ -1,3 +1,5 @@
+# It would be Depreceated
+
 #!/bin/sh
 
 # If a command fails then the deploy stops
