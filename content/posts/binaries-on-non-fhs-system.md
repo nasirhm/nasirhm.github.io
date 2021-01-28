@@ -3,7 +3,6 @@ title: "Running Pre-Built Binaries on Non-FHS *NIX Systems"
 date: 2021-01-20T00:28:56+05:00
 tags: ["nix", "binaries", "linux", "nodejs"]
 categories: ["nix", "linux"]
-draft: true
 ---
 
 Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.
@@ -147,7 +146,7 @@ The second line, with the ELF binary, the dynamic loader (ELF interpreter) is se
 
 After executing the function `patch_node_application`, it'll patch the `node` binary and you'll be able to execute it on NixOS.
 
-To add the above script incorporated in your current build systems, here's a small addition to the shell script to only execute the function if it's running on NixOS:
+To add the above script incorporated in your current build systems for NodeJS Projects, here's a small addition to the shell script to only execute the function `patch_node_application` (Responsible for patching the node binary) if it's running on NixOS:
 ```
 ...
 if [ "cat /etc/os-release | grep 'nixos'" ]; then
@@ -159,3 +158,7 @@ Now the shell script will only be executed if the system is running NixOS, and t
 Thank you for reading! I'll be writing more about ELF and Nix in the future.
 
 Looking forward to your feedback on the post.
+
+---
+
+Thank You very much [cateroxl](https://cateroxl.github.io) for proofreading and editing the blog post.
