@@ -8,7 +8,6 @@ date: 2020-04-06T03:55:11+05:00
     - Channels where you can find me: #fedora-join, #fedora-commops, #fedora-diversity ...
 - Email: [spam protection, base64 encoded]
     - `bmFzaXJodXNzYWlubTE0`@gmail.com (personal)
-    - `bmh1c3NhaW4=`@sastaticket.pk (work)
 - Time Zone: UTC + 05:00 (PKT)
 - FAS Account: [nasirhm](https://fedoraproject.org/wiki/User:Nasirhm)
 - Social Networks:
