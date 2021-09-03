@@ -11,7 +11,7 @@ date: 2020-04-06T03:38:58+05:00
 ---
 ## Work
 - [Advocate](https://docs.fedoraproject.org/en-US/mindshare-committee/advocate/) @ [Fedora Project](https://getfedora.org/)
-- DevOps Intern @ [Nisum.pk](https://www.Nisum.pk/)
+- DevOps Intern @ [Nisum.pk](https://www.nisum.com/)
 - Web Developer @ [GDG Kolachi](https://gdgkolachi.com/)
 
 ---
