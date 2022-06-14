@@ -1,4 +1,4 @@
-baseurl = "https://nasirhm.github.io"
+baseurl = "https://nasirhm.com"
 DefaultContentLanguage = "en"
 title = "Nasir Hussain's Blog"
 theme = "beautifulhugo"
