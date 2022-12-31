@@ -17,8 +17,8 @@ jobs:
       - name: Hugo Deploy to Github Pages
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
-          HUGO_VERSION: 0.80.0
+          HUGO_VERSION: 0.190.0
           TARGET_REPO: nasirhm/nasirhm.github.io
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
-         #HUGO_ARGS: '-t beautifulhugo'
+          #HUGO_ARGS: '-t beautifulhugo'
