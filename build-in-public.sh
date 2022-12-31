@@ -8,7 +8,7 @@ set -e
 printf "\033[0;32mDeploying updates to Github...\033[0m\n"
 
 # Build the project
-hugo -t beautifulhugo
+hugo -t terminal
 
 # Go to public directory
 cd public

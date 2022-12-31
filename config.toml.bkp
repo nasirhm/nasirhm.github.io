@@ -1,0 +1,78 @@
+baseurl = "https://nasirhm.com"
+DefaultContentLanguage = "en"
+title = "Nasir Hussain's Blog"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#disqusShortname = "XXX"
+googleAnalytics = "G-F67DV7S0JL"
+
+[Params]
+#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  subtitle = "mussings of a software engineer"
+  mainSections = ["post","posts"]
+  logo = "img/avatar-icon.png" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+#  hideAuthor = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+[Permalinks]
+  posts="/:year/:filename/"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Nasir Hussain"
+  website = "nasirhm.github.io"
+  email = "nasirhussainm14@gmail.com"
+  github = "nasirhm"
+  twitter = "_nasirhm_"
+  linkedin = "nasirhm"
+
+[[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 1
+
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 2
+
+[[menu.main]]
+    name = "Talks"
+    url = "talks/"
+    weight = 3
+
+[[menu.main]]
+    name = "Categories"
+    url = "categories/"
+    weight = 4
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags/"
+    weight = 5
