@@ -17,7 +17,7 @@ jobs:
       - name: Hugo Deploy to Github Pages
         uses: benmatselby/hugo-deploy-gh-pages@main
         env:
-          HUGO_VERSION: 0.190.0
+          HUGO_VERSION: 0.109.0
           TARGET_REPO: nasirhm/nasirhm.github.io
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
