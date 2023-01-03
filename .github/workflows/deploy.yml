@@ -15,7 +15,7 @@ jobs:
         with:
           ref: hugo-devel
       - name: Hugo Deploy to Github Pages
-        uses: benmatselby/hugo-deploy-gh-pages@master
+        uses: benmatselby/hugo-deploy-gh-pages@main
         env:
           HUGO_VERSION: 0.190.0
           TARGET_REPO: nasirhm/nasirhm.github.io
