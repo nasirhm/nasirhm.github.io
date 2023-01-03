@@ -21,4 +21,4 @@ jobs:
           TARGET_REPO: nasirhm/nasirhm.github.io
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
-          HUGO_ARGS: '-t terminal'
+          #HUGO_ARGS: '-t terminal'
