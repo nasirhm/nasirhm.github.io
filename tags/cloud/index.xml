@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloud on Nasir Hussain</title>
+    <link>/tags/cloud/</link>
+    <description>Recent content in cloud on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sun, 23 May 2021 19:25:32 +0500</lastBuildDate><atom:link href="/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Google Cloud: Pub/Sub 101</title>
+      <link>/posts/exploring-google-cloud-pubsub/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/posts/exploring-google-cloud-pubsub/</guid>
+      <description>In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.
+In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.
+We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.
+What is Cloud Pub/Sub?</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/pub_sub-512-color.png&#34; alt=&#34;Google Pub Sub&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.&lt;/p&gt;
+&lt;p&gt;In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-cloud-pubsub&#34;&gt;What is Cloud Pub/Sub?&lt;/h2&gt;
+&lt;p&gt;Pub/Sub is short for Publish/Subscribe Messaging and it is an asynchronous messaging service that decouples services that produce events from services that process events.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Availability:&lt;/strong&gt; Global (In all GCP Regions around the world)&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s dig a little deeper into it.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s used in event-driven applications, where we can have applications publishing and subscribing to events that are available as messages.&lt;/p&gt;
+&lt;p&gt;As the name suggests, Pub/Sub Works in a Publisher / Subscriber model, Where a publisher publishes a message and the subscriber acknowledges that message.&lt;/p&gt;
+&lt;p&gt;How do we make sure that the Publisher publishes to the right place and the subscriber is listening to the right place? It&amp;rsquo;s where topics come in.&lt;/p&gt;
+&lt;h3 id=&#34;core-components&#34;&gt;Core Components:&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the Core constructs of what Pub/Sub is made of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Topic:&lt;/strong&gt; An intermediary channel that maintains a list of subscribers to relay messages to that are received from publishers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message:&lt;/strong&gt; Serialized messages sent to a topic by a publisher which has no knowledge of the subscribers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Publisher:&lt;/strong&gt; An application which publishes a message to a topic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subscriber:&lt;/strong&gt; An application that registers itself with the desired topic in order to receive the appropriate messages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pubsub-model&#34;&gt;Pub/Sub Model:&lt;/h3&gt;
+&lt;p&gt;As we now understand the Core components, Let&amp;rsquo;s look at how the Pub/Sub Model Works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We start with creating a topic in Pub/Sub.&lt;/li&gt;
+&lt;li&gt;We then create a subscription for that topic, It plays the subscriber part of the Pub/Sub.&lt;/li&gt;
+&lt;li&gt;Now, we can publish messages in our Pub/Sub topic.&lt;/li&gt;
+&lt;li&gt;The messages are available in our Pub/Sub topic, Now the subscriber can consume those messages by acknowledging them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;rsquo;s a pictorial overview of it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/gcp-pub-sub-01.png&#34; alt=&#34;Google Cloud Pub/Sub Model Overview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the example above, We&amp;rsquo;ve got two seperate topics where messages will be published and a single consumer having two subscriptions providing the consumer the ability to consume messages from both the topics.&lt;/p&gt;
+&lt;p&gt;The same can be done for a publisher, a single publisher can publish messages to multiple topics too.&lt;/p&gt;
+&lt;h3 id=&#34;some-benefits-of-cloud-pubsub&#34;&gt;Some Benefits of Cloud Pub/Sub:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Loose Coupling:&lt;/strong&gt; Publishers are unaware of the subscribers presence. It provides the ability for the system to function independently of each other.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scalability:&lt;/strong&gt; Pub/sub messaging can scale to volumes beyond the capability of a single traditional data center.&lt;/p&gt;
+&lt;h3 id=&#34;lets-get-hands-on-with-it&#34;&gt;Let&amp;rsquo;s get hands-on with it.&lt;/h3&gt;
+&lt;p&gt;Once, you&amp;rsquo;ve got your GCP account and gcloud CLI setup, We can make use of the gcloud CLI for this demo.&lt;/p&gt;
+&lt;h3 id=&#34;demo&#34;&gt;Demo:&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s assume the following scenario:&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re running a Coffee Shop, Where customers have the ability to push messages to a topic with their order about cofee.&lt;/p&gt;
+&lt;p&gt;On each station our Baristas are subscribed to the topic and can pull one message at the time and ackowledge it to start brewing coffee for the customer.&lt;/p&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup:&lt;/h3&gt;
+&lt;h4 id=&#34;creating-the-topic&#34;&gt;Creating the topic:&lt;/h4&gt;
+&lt;p&gt;To create the topic in pub/sub, we&amp;rsquo;ll use glcoud CLI as following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub topics create coffee-shop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we&amp;rsquo;ve got the topic created as &lt;code&gt;coffee-shop&lt;/code&gt;, It&amp;rsquo;s time for the barista to join as a subscriber.&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-subscription-for-the-topic&#34;&gt;Creating a subscription for the topic:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub subscriptions create --topic coffee-shop barista
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the above example, we&amp;rsquo;re creating a subscription as &lt;code&gt;barista&lt;/code&gt; which subscribes to the topic created in the past step.&lt;/p&gt;
+&lt;p&gt;Yayyy !!, We&amp;rsquo;re done with our setup for Pub/Sub. Now we can integrate it with our applications as subscribers and publishers.&lt;/p&gt;
+&lt;h4 id=&#34;publishing-and-consuming-messages&#34;&gt;Publishing and Consuming Messages:&lt;/h4&gt;
+&lt;p&gt;Let&amp;rsquo;s assume, we&amp;rsquo;ve got a customer, who needs an espresso with cinnamon, They can publish the following message in the &lt;code&gt;coffee-shop&lt;/code&gt; topic as: &lt;code&gt;{&amp;quot;coffee_type&amp;quot;: &amp;quot;espresso&amp;quot;, &amp;quot;cinnamon&amp;quot;: &amp;quot;true&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We can use the gcloud CLI to publish this message as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub topics publish coffee-shop --message &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{&amp;#34;coffee_type&amp;#34;: &amp;#34;espresso&amp;#34;, &amp;#34;cinnamon&amp;#34;: &amp;#34;true&amp;#34;}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The gcloud CLI will publish the message on the &lt;code&gt;coffee-shop&lt;/code&gt; topic.&lt;/p&gt;
+&lt;p&gt;And then we&amp;rsquo;ll have our barista free to take a coffee order, They can use their subscription to consume the messages, We&amp;rsquo;ll use Gcloud CLI for it too:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gcloud pubsub subscriptions pull barista --limit=1 --auto-ack
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; We&amp;rsquo;re using the &lt;code&gt;--limit&lt;/code&gt; flag to make sure, we only receive one message from the topic.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; For the &lt;code&gt;--auto-ack&lt;/code&gt; flag to automatically acknowledge the message.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s available there to make sure the consumer receives the message successfully by acknowledging it&amp;rsquo;s receival.&lt;/p&gt;
+&lt;p&gt;We can also manually acknowledge the messages, &lt;a href=&#34;https://cloud.google.com/community/tutorials/pubsub-quickstart&#34;&gt;Click here&lt;/a&gt; to learn more about it.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Publish/subscribe messaging is when a publisher sends a message to a topic and the message is forwarded to a subscriber.&lt;/li&gt;
+&lt;li&gt;The concept of pub/sub is easy to understand but every coding and programming language handles it differently, making it a little more challenging to learn across all platforms.&lt;/li&gt;
+&lt;li&gt;On the edge, message delivery times can be two to four times faster by using a network backbone and multiple points of presence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank You for Reading ! Stay tuned, I&amp;rsquo;ll be writing more about GCP Products and my experience with them in the near future.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

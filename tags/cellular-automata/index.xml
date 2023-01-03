@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cellular-automata on Nasir Hussain</title>
+    <link>/tags/cellular-automata/</link>
+    <description>Recent content in cellular-automata on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 19:25:32 +0500</lastBuildDate><atom:link href="/tags/cellular-automata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding Conway&#39;s Game of Life - Cellular Automata - The Maths</title>
+      <link>/posts/coding-conways-game-of-life-1/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/posts/coding-conways-game-of-life-1/</guid>
+      <description>In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.
+In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.
+Without any further ado, Let&amp;rsquo;s take a dive into it.
+What is Cellular Automata? Cellular Automata is a field of Automata Theory which is a part of Discrete Maths.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/pub_sub-512-color.png&#34; alt=&#34;Conway&amp;amp;rsquo;s Game of Life&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.&lt;/p&gt;
+&lt;p&gt;In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.&lt;/p&gt;
+&lt;p&gt;Without any further ado, Let&amp;rsquo;s take a dive into it.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-cellular-automata&#34;&gt;What is Cellular Automata?&lt;/h2&gt;
+&lt;p&gt;Cellular Automata is a field of Automata Theory which is a part of Discrete Maths. Automata Theory has applications in Physics, Computational Theory, Biology, etc. Automata Theory consists of the study of various Computational Classes: Combinatorial Logic, Finite-State Machines, Pushdown Automation and Turing Machines.&lt;/p&gt;
+&lt;p&gt;Cellular Automata deals with Artificial life, which examines systems related to natural life, it&amp;rsquo;s processes, it&amp;rsquo;s evolution, through the usage of simulations with computer models.&lt;/p&gt;
+&lt;h3 id=&#34;cellular-automata---how-&#34;&gt;Cellular Automata - How ??&lt;/h3&gt;
+&lt;p&gt;Cellular Automata consists of a grid of cells, with discrete (finite states) e.g: On and Off. For each cell a set, a set of cells are called it&amp;rsquo;s neighborhood. It also consists of a set of discrete rules which are applied on each iteration. An initial state (t=0) is selected by defining the state of various cells. Upon each iteration (t+1), The set of rules are applied upon the whole grid and then the change is the state of the neighboring cells is then observed.&lt;/p&gt;
+&lt;p&gt;[Image for Grid of Cells, and state.]&lt;/p&gt;
+&lt;h2 id=&#34;conways-game-of-life&#34;&gt;Conway&amp;rsquo;s Game of Life&lt;/h2&gt;
+&lt;p&gt;Conway&amp;rsquo;s Game of Life is invented by the famous Mathematician, &amp;ldquo;John Conway&amp;rdquo;. It is also often referred as &amp;ldquo;Life&amp;rdquo;. It is a zero-player game, meaning for it&amp;rsquo;s evolution to be defined by the initial state. It&amp;rsquo;s played on an infinite two-dimentional grid (However, For the sake of computing it, we&amp;rsquo;ll be using an nxn size for the grid).&lt;/p&gt;
+&lt;p&gt;Each cell has eight neighboring cells which are horizontally, vertically, or diagonally adjacent.&lt;/p&gt;
+&lt;p&gt;It consists of the following rules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any live cell with fewer than two live neighbours dies, as if by underpopulation.&lt;/li&gt;
+&lt;li&gt;Any live cell with two or three live neighbours lives on to the next generation.&lt;/li&gt;
+&lt;li&gt;Any live cell with more than three live neighbours dies, as if by overpopulation.&lt;/li&gt;
+&lt;li&gt;Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the rules in action. (GIF for Rules).&lt;/p&gt;
+&lt;p&gt;Simple, Right ?&lt;/p&gt;
+&lt;p&gt;It consists of a grid of squares, simple rules and simple states for each cell.&lt;/p&gt;
+&lt;h3 id=&#34;well-youre-in-for-a-treat-patterns&#34;&gt;Well, You&amp;rsquo;re in for a treat. Patterns:&lt;/h3&gt;
+&lt;p&gt;There are various patterns (alot !!) that are discovered. However, we&amp;rsquo;ll be looking at some promiment ones below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Still Life&lt;/strong&gt;: It&amp;rsquo;s the most obvious pattern we can think of, It&amp;rsquo;s a state of cells, which are stabilized. Where neither cell is producing nor dying out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Oscillators&lt;/strong&gt;: It&amp;rsquo;s another obvious pattern where a set of cells keep oscilating between two states.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Simple rules, Simple patters, Huh ?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at onther one:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spaceships&lt;/strong&gt;: A set of cells, which move together in one direction, leaving no traces behind. e.g: Glider (GIF below.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cool, Isn&amp;rsquo;t it. How about a Glider generator.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Glider Gun&lt;/strong&gt;: It&amp;rsquo;s a pattern, which keeps oscilating (like an oscillator) and periodically emits spaceships like the Glider. e.g: Gosper&amp;rsquo;s Glider Gun creating gliders. (GIF).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hmm, how about some pattern that leaves some traces behind, Introducing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Puffer&lt;/strong&gt;: It&amp;rsquo;s similar to a spaceship, however it leaves the traces behind. (Examples)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-does-it-matter-&#34;&gt;Why does it matter ?&lt;/h3&gt;
+&lt;p&gt;Conway&amp;rsquo;s game of life is a perfect example to demonstrate how complex behaviour can emerge from simple rules iterated overtime along with providing a simple way to trace back each iteration.&lt;/p&gt;
+&lt;p&gt;It got me thinking about system design and how often times in order to develop a complex system, simplicity is often neglected. However, with simple rules we can create complex systems.&lt;/p&gt;
+&lt;p&gt;Thank You for Reading ! Stay tuned, I&amp;rsquo;ll be writing more about it and how to program it in Go Language.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

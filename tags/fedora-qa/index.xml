@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fedora-qa on Nasir Hussain</title>
+    <link>/tags/fedora-qa/</link>
+    <description>Recent content in fedora-qa on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Tue, 07 Apr 2020 17:29:03 +0500</lastBuildDate><atom:link href="/tags/fedora-qa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with Fedora QA - Part 1</title>
+      <link>/posts/getting-started-with-fedora-qa-part-1/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
+      
+      <guid>/posts/getting-started-with-fedora-qa-part-1/</guid>
+      <description>What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.
+By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.</description>
+      <content>&lt;blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;what-is-sqa-quality-assurance-&#34;&gt;What is SQA (Quality Assurance) ?&lt;/h2&gt;
+&lt;p&gt;According to &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_quality_assurance&#34;&gt;Wikipedia&lt;/a&gt; : &lt;strong&gt;Software quality assurance (SQA)&lt;/strong&gt; is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.&lt;/p&gt;
+&lt;p&gt;By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.&lt;/p&gt;
+&lt;h2 id=&#34;why-quality-assurance-is-an-essential-component-for-fedora-project&#34;&gt;Why Quality Assurance is an essential component for Fedora Project&lt;/h2&gt;
+&lt;p&gt;Fedora is an Open Source Linux distribution Operating System which releases once in every six months and as a result the environment becomes very fast paced and that could make things break among general users of the distro, to prevent that to happening to users &amp;amp; to make sure everything works as expected, Quality Assurance is a must in Fedora Project. In Fedora, we have to encompass the user experience as there are thousands and thousands of people who expect a more stable &amp;amp; feature enriched OS that gets better with each release.&lt;/p&gt;
+&lt;h2 id=&#34;fedora-release-cycle&#34;&gt;Fedora Release Cycle&lt;/h2&gt;
+&lt;p&gt;Before we jump into practical tools, let&amp;rsquo;s have a quick introduction to how the process works&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/posts-static/getting-started-with-fedora-qa/fedorareleasecycle.png#align:left&#34; alt=&#34;Fedora Release Cycle&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The above diagram displays a clear demonstration of how Fedora creates it&amp;rsquo;s release&lt;/p&gt;
+&lt;p&gt;It includes these branches:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rawhide&lt;/strong&gt; serves as the upstream for the release branch, it&amp;rsquo;s a bleeding edge, non freezing branch where contributors consitently push their packages, after a time slice we branch out different necessary packages and the Rawhide keeps on growing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Branched Release&lt;/strong&gt; is the version which gets branched out from the ongoing Rawhide &amp;amp; starts to get tested &amp;amp; refines for the release. As we reach this point, the QA team gets hands on with it :)&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;h3 id=&#34;fas-id--httpsadminfedoraprojectorgaccountshttpsadminfedoraprojectorgaccounts&#34;&gt;FAS ID : &lt;a href=&#34;https://admin.fedoraproject.org/accounts/&#34;&gt;https://admin.fedoraproject.org/accounts/&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A FAS (Fedora Account System) account is essential for you to get login access to all subprojects in Fedora with the same user ID and passwords.&lt;/p&gt;
+&lt;h3 id=&#34;bugzilla--httpsbugzillaredhatcomhttpsbugzillaredhatcom&#34;&gt;Bugzilla : &lt;a href=&#34;https://bugzilla.redhat.com/&#34;&gt;https://bugzilla.redhat.com/&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Bugzilla serves as the bug tracking system for Fedora Project, with Bugzilla you can create &amp;amp; verify bugs along with fixing some! :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To register on Bugzilla&lt;/strong&gt;, We recommend using your &lt;code&gt;@fedoraproject.org&lt;/code&gt; email Alias, because in different places for QA you would require it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; : If you don&amp;rsquo;t have a &lt;code&gt;@fedoraproject.org&lt;/code&gt; email Alias, We have a good news for you, you can reach out to us on &lt;a href=&#34;https://docs.fedoraproject.org/en-US/fedora-join/&#34;&gt;Fedora Join&lt;/a&gt; and we can provide you a temporary membership, which would give you the ability to attain your email Alias.&lt;/p&gt;
+&lt;p&gt;After setting up your accounts, you can reach out to the &lt;em&gt;QA Team&lt;/em&gt; on &lt;strong&gt;IRC&lt;/strong&gt;, As it&amp;rsquo;s the place where most of the QA team is available, The channel for Fedora QA is: &lt;code&gt;#fedora-qa&lt;/code&gt; and for Matrix users, It&amp;rsquo;s: &lt;code&gt;#freenode_#fedora-qa:matrix.org&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Another alternative to IRC, is mailing lists where you can have discussions with Fedora QA team, in case if you need any clarification or being faced by issues. Mailing list requires you to subscribe to it before you can post/ask/talk. The fedora QA mailing list resides here : &lt;a href=&#34;https://lists.fedoraproject.org/admin/lists/test.lists.fedoraproject.org/&#34;&gt;test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To subscribe to the mailing list you would need a FAS ID too.&lt;/p&gt;
+&lt;p&gt;Best of luck for starting QA with Fedora Project.&lt;/p&gt;
+&lt;p&gt;The next post would be more about getting involved and hands on with QA.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thank You for reading, if you have any doubts or questions feel free to reach out to me here : &lt;a href=&#34;/contact/&#34;&gt;Contact&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

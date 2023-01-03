@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Getting Started With Nix: Introduction :: Nasir Hussain</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recently, I installed NixOS on one of my machines to explore the Nix ecosystem, and to learn how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This blog post series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed to be a reliable and reproducible package-management system.
+Nix is also the primary package manager for NixOS and can also be installed as an additional package manager on Linux and Mac OS X." />
+<meta name="keywords" content="math,cloud,kubernetes,programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/getting-started-with-nix-introduction/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Getting Started With Nix: Introduction">
+<meta property="og:description" content="Recently, I installed NixOS on one of my machines to explore the Nix ecosystem, and to learn how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This blog post series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed to be a reliable and reproducible package-management system.
+Nix is also the primary package manager for NixOS and can also be installed as an additional package manager on Linux and Mac OS X." />
+<meta property="og:url" content="/posts/getting-started-with-nix-introduction/" />
+<meta property="og:site_name" content="Nasir Hussain" />
+
+  
+    <meta property="og:image" content="/img/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="Nix" />
+
+
+  <meta property="article:published_time" content="2020-12-16 01:58:48 &#43;0500 &#43;0500" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Nasir Hussain
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/getting-started-with-nix-introduction/">Getting Started With Nix: Introduction</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2020-12-16 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/nix/">nix</a>&nbsp;
+      
+      #<a href="/tags/nix-packages/">nix-packages</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Recently, I installed NixOS on one of my machines to explore the Nix ecosystem, and to learn how it makes the process of creating deterministic and reproducible builds efficient and simpler.</p>
+<p>This blog post series provides an introduction to the Nix package manager and how it works.</p>
+<h2 id="what-is-nix">What is Nix?<a href="#what-is-nix" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Nix is a powerful, purely functional package manager designed to be a reliable and reproducible package-management system.</p>
+<p>Nix is also the primary package manager for <strong>NixOS</strong> and can also be installed as an additional package manager on Linux and Mac OS X.</p>
+<p>It also offers the following features:</p>
+<ul>
+<li>Atomic Upgrades and Rollbacks;</li>
+<li>Multiple versions of a package;</li>
+<li>Multi-user package management, the ability to install certain packages for certain users only;</li>
+<li>Effortless setup of build environments for a package, providing functional builds;</li>
+<li>and many more.</li>
+</ul>
+<h2 id="how-nix-works">How Nix Works<a href="#how-nix-works" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Packages in the Nix ecosystem are built from Nix expressions, which is a simple functional language that enables the packaging aspect for Nix (The package manager).</p>
+<p>A Nix expression describes everything that goes into a package build, e.g: other packages (dependencies), sources, config files, environment variables, external patches, etc.</p>
+<p>A Nix expression results in a derivation, which is a build of the expression, that takes some inputs and produces an output, outputs are almost always some <code>/nix/store/some-hash-pkg-name</code> path.</p>
+<p>Below is an abstract diagram of how Nix expressions work:</p>
+<p><img src="/images/posts-static/nix-pkg-101/nix-expression-101.png" alt="How Nix Expressions work"></p>
+<p>As you can see, we&rsquo;ve got an application written in C language and we&rsquo;re creating a Nix expression for it, which includes some code patches, dependencies, configurations. The resultant derivation is then created in the Nix Store.</p>
+<h3 id="the-essence-of-nix-in-comparison-to-traditional-linux-systems">The essence of Nix in comparison to traditional Linux systems:<a href="#the-essence-of-nix-in-comparison-to-traditional-linux-systems" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Nix emerges from the idea that <strong>FHS (Filesystem Hierarchy Standard) is fundamentally incompatible with reproducibility</strong>. Let me explain now:</p>
+<p>With traditional Linux systems and package managers, you&rsquo;ll find paths like <code>/usr/bin/python</code> or <code>/lib/libm.so</code> where packages are installed. But there are a lot of things that we don&rsquo;t know about the file that&rsquo;s there, for example:</p>
+<ul>
+<li>What&rsquo;s the version of the package the binary/library came from?</li>
+<li>What are the libraries it uses?</li>
+<li>What configure flags were enabled during the build?</li>
+</ul>
+<p>These questions have a significant effect on the resulted build and can also change the behavior of the application.</p>
+<p>Indeed, there are ways to get around this in FHS. We can link directly to <code>/lib/libm.so</code> or use <code>/usr/bin/python3.7</code> in our shebang, but then there will still be a lot of unknowns.</p>
+<p>Nix plays a pretty essential role in fixing it, by isolating the build itself resulting in reproducible build artifacts.</p>
+<p>On Nix systems, the file paths look like this: <code>/nix/store/&lt;hash&gt;-&lt;name&gt;-&lt;version&gt;</code>.</p>
+<p>If there&rsquo;s something you&rsquo;re unable to grasp&hellip;No worries! We&rsquo;ll be exploring Nix further in the future with because this is only the first of the series.</p>
+<p>Thank you for reading. In the next posts, we will be installing Nix and building some Nix expressions ourselves.</p>
+<hr>
+<p>Thank you very much <a href="https://cateroxl.github.io">cateroxl</a> and <a href="https://twitter.com/HiraT97">Hira Tariq</a> for proofreading and providing your valuable feedback on the blog post.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/posts/binaries-on-non-fhs-system/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Running Pre-Built Binaries on Non-FHS *NIX Systems</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/posts/badge-i-voted-f33/">
+                <span class="button__text">Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Nasir Hussain</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nasir Hussain</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 19:25:32 +0500</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cellular-automata</title>
+      <link>/tags/cellular-automata/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/cellular-automata/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>computational-theory</title>
+      <link>/tags/computational-theory/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/computational-theory/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>/tags/math/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/math/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/cloud/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>gcp</title>
+      <link>/tags/gcp/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/gcp/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>/tags/google/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/tags/google/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>binaries</title>
+      <link>/tags/binaries/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/tags/binaries/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>nix</title>
+      <link>/tags/nix/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/tags/nix/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>/tags/nodejs/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/tags/nodejs/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>nix-packages</title>
+      <link>/tags/nix-packages/</link>
+      <pubDate>Wed, 16 Dec 2020 01:58:48 +0500</pubDate>
+      
+      <guid>/tags/nix-packages/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>badges</title>
+      <link>/tags/badges/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      
+      <guid>/tags/badges/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>/tags/fedora/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      
+      <guid>/tags/fedora/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>fedora-qa</title>
+      <link>/tags/fedora-qa/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
+      
+      <guid>/tags/fedora-qa/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>foss</title>
+      <link>/tags/foss/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
+      
+      <guid>/tags/foss/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>qa</title>
+      <link>/tags/qa/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
+      
+      <guid>/tags/qa/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>talks</title>
+      <link>/tags/talks/</link>
+      <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
+      
+      <guid>/tags/talks/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Nasir Hussain</title>
+    <link>/categories/linux/</link>
+    <description>Recent content in linux on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Wed, 20 Jan 2021 00:28:56 +0500</lastBuildDate><atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Pre-Built Binaries on Non-FHS *NIX Systems</title>
+      <link>/posts/binaries-on-non-fhs-system/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/posts/binaries-on-non-fhs-system/</guid>
+      <description>Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.
+We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.
+This exception occurs when it is unable to find one of the ELF libraries required to execute the binary.</description>
+      <content>&lt;p&gt;Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: &lt;code&gt;The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This exception occurs when it is unable to find one of the ELF libraries required to execute the binary.&lt;/p&gt;
+&lt;p&gt;In this blog post, we&amp;rsquo;ll be digging into it a little deeper to understand &amp;amp; find a solution:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;how-do-binaries-work-in-linux&#34;&gt;How do binaries work in Linux?&lt;/h1&gt;
+&lt;p&gt;Binaries are a set of instructions that are understood by the machine to perform a specific task.&lt;/p&gt;
+&lt;p&gt;Our day-to-day interaction with our terminal CLI (Command Line Interface) includes usage of programs like: &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;ls&lt;/code&gt;, &lt;code&gt;cd&lt;/code&gt;, etc., which are available typically in our: &lt;code&gt;/bin&lt;/code&gt; (binary) directory. Example: We can use &lt;code&gt;which&lt;/code&gt; (a binary itself) to find the location of the &lt;code&gt;bash&lt;/code&gt; program:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ which bash
+/bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This provides us information on where the program is located on the disk.&lt;/p&gt;
+&lt;p&gt;Similar to standards being followed in our day-to-day life, binaries also follow a certain standard known as &lt;strong&gt;ELF&lt;/strong&gt; or the Executable and Linkable Format.&lt;/p&gt;
+&lt;h2 id=&#34;elf-standard-for-binaries&#34;&gt;ELF Standard for Binaries&lt;/h2&gt;
+&lt;p&gt;ELF (Executable and Linkable Format) standard is used to let the Operating System know some information about how to execute the program.
+It&amp;rsquo;s something that we don&amp;rsquo;t interact with much on our daily basis, but can be quite helpful with debugging. ELF standard makes us extend our program to work efficiently at runtime.&lt;/p&gt;
+&lt;p&gt;Example: To run a C program, we don&amp;rsquo;t need the entire implementation of the C language itself in the codebase. Instead, we link a library (glibc) with our binary to let it know that it needs the C library to be executed.&lt;/p&gt;
+&lt;p&gt;Sounds pretty cool, right?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get back to the problem now.&lt;/p&gt;
+&lt;p&gt;As described earlier, the error: &lt;code&gt;The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be found&lt;/code&gt; occurs whenever there&amp;rsquo;s a dependency on a library that the binary is not able to find.&lt;/p&gt;
+&lt;h3 id=&#34;lets-get-to-the-debugging-part&#34;&gt;Let&amp;rsquo;s get to the debugging part&lt;/h3&gt;
+&lt;p&gt;One thing that I love about UNIX-based systems is that we have the tools to debug almost everything. To get the list of dependencies or libraries required by a binary, we can use the &lt;code&gt;ldd&lt;/code&gt; command.
+It prints the shared libraries required by the program on the command line. As an example. let&amp;rsquo;s see what a pre-compiled binary of NodeJS requires:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ldd ./node
+
+		linux-vdso.so.1 (0x00007fff00bf9000)
+		libdl.so.2 =&amp;gt; /lib/libdl.so.2 (0x00007fc857f59000)
+		libstdc++.so.6 =&amp;gt; not found
+		libm.so.6 =&amp;gt; /lib/libm.so.6 (0x00007fc857e18000)
+		libgcc_s.so.1 =&amp;gt; /lib/libgcc_s.so.1 (0x00007fc857dfe000)
+		libpthread.so.0 =&amp;gt; /lib/libpthread.so.0 (0x00007fc857ddd000)
+		libc.so.6 =&amp;gt; /lib/libc.so.6 (0x00007fc857c1e000)
+		/lib64/ld-linux-x86-64.so.2 =&amp;gt; /lib64/ld-linux-x86-64.so.2 (0x00007fc857f60000)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Upon executing the program, it returns the following error:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ./node
+
+Failed to execute process &amp;#39;./node&amp;#39;. Reason:
+The file &amp;#39;./node&amp;#39; does not exist or could not be executed.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Do you know what the problem is? You guessed it right. It&amp;rsquo;s the &lt;code&gt;libstdc++.so.6&lt;/code&gt; library that is causing our binary to not execute.&lt;/p&gt;
+&lt;p&gt;Now that we know what&amp;rsquo;s causing the issue, let&amp;rsquo;s fix it.&lt;/p&gt;
+&lt;h4 id=&#34;for-fhs-filesystem-hirearchy-standard-distros-debian-ubuntu-etc&#34;&gt;For FHS (FileSystem Hirearchy Standard) Distros (Debian, Ubuntu, etc.)&lt;/h4&gt;
+&lt;p&gt;As in FHS systems, we make some assumptions regarding our system which includes that all the libraries will be in &lt;code&gt;/lib&lt;/code&gt; or relevant directories. It&amp;rsquo;s, then, easier to fix the issue.&lt;/p&gt;
+&lt;p&gt;In FHS standardized / compliant Linux distributions it can be easily solved by installing the relevant library&amp;rsquo;s package.&lt;/p&gt;
+&lt;p&gt;Example: For &lt;code&gt;libstdc++.6&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;On Debian/Ubuntu based distros: &lt;code&gt;apt-get install libstdc++6&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On CentOS/Fedora based distros: &lt;code&gt;yum install libstdcxx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once installed, it&amp;rsquo;ll be available in the &lt;code&gt;/lib&lt;/code&gt; directory resulting in the ELF loader to find the library in &lt;code&gt;/lib&lt;/code&gt;. You would then be able to execute &lt;code&gt;node&lt;/code&gt; as following:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ./node
+Welcome to Node.js v14.15.4.
+Type &amp;#34;.help&amp;#34; for more information
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Woohoo, it worked. Now let&amp;rsquo;s see how to fix it in non-FHS distributions, where we don&amp;rsquo;t have a global &lt;code&gt;/lib&lt;/code&gt; directory. :D&lt;/p&gt;
+&lt;h4 id=&#34;for-non-fhs-distros-nixos-etc&#34;&gt;For Non-FHS Distros (NixOS, etc):&lt;/h4&gt;
+&lt;p&gt;To maintain the non-global state of a system in non-FHS distributions, we would not be modifying the state of our system. We will be patching the ELF binary to work correctly. Example in NixOS:&lt;/p&gt;
+&lt;p&gt;NixOS provides a tool: &lt;a href=&#34;https://github.com/NixOS/patchelf&#34;&gt;patchelf&lt;/a&gt; which is a small utility that provides us the ability to patch pre-compiled binaries without having to play with machine code (0s and 1s).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started, we first need to find where out &lt;code&gt;libstdc++.so.6&lt;/code&gt; file lives in our &lt;code&gt;/nix/store&lt;/code&gt;, which can be found via the following shell function:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function find_stdcplusplus_in_nix_store(){
+		local _fileName=&amp;#34;libstdc++.so.6&amp;#34;;
+		ls /nix/store | grep &amp;#34;gcc&amp;#34; | grep &amp;#34;lib&amp;#34; \
+		| awk -v file=&amp;#34;${_fileName}&amp;#34; &amp;#39;{printf(&amp;#34;find /nix/store/%s -name %s\n&amp;#34;);}&amp;#39; | sh \
+		| awk -F&amp;#39;-&amp;#39; &amp;#39;{printf(&amp;#34;%s %s\n&amp;#34;, $3, $0);}&amp;#39; | sort | tail -n 1 | awk &amp;#39;{print $2;}&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It&amp;rsquo;ll return the full path of the library/the file name &lt;code&gt;libstdc++.so.6&lt;/code&gt;. It&amp;rsquo;ll be something like: &lt;code&gt;/nix/store/gcc-&amp;lt;hash&amp;gt;/lib/libstdc++.so.6&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We need to get to know the directory where our library lives. To find it, we can execute the following function:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+function find_stdcplusplus_parent_dir_in_nix_store(){
+		local _file=&amp;#34;$(find_stdcplusplus_in_nix_store)&amp;#34;;
+		dirname &amp;#34;${_file}&amp;#34;;
+}
+
+nix_store_location=$(find_stdcplusplus_dir_in_nix_store)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It returns the directory where the library exists i.e: &lt;code&gt;/nix/store/gcc-&amp;lt;hash&amp;gt;/lib&lt;/code&gt; and stores it in a global variable as &lt;code&gt;nix_store_location&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now it&amp;rsquo;s time for the final operation in which we will be creating shell environment/s with &lt;code&gt;patchelf&lt;/code&gt; using &lt;code&gt;nix-shell&lt;/code&gt; to patch the ELF binary:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+function patch_node_application(){
+		nix-shell -p patchelf --run &amp;#39;patchelf --set-rpath $nix_store_location bin/node&amp;#39;
+		nix-shell -p patchelf --run &amp;#39;patchelf --set-interpreter &amp;#34;$(cat $NIX_CC/nix-support/dynamic-linker)&amp;#34; bin/node&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first line within the function adds an &lt;code&gt;rpath&lt;/code&gt; (runtime search path) to let our loader know that &lt;code&gt;libstdc++&lt;/code&gt; can be found in a specific directory in the Nix store.&lt;/p&gt;
+&lt;p&gt;The second line, with the ELF binary, the dynamic loader (ELF interpreter) is set to a static path which is generally not available under NixOS at: &lt;code&gt;lib64/ld-linux-x86-64.so.2&lt;/code&gt;. We&amp;rsquo;re changing it to the dynamic loader available at &lt;code&gt;$NIX_CC/nix-support/dynamic-linker&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After executing the function &lt;code&gt;patch_node_application&lt;/code&gt;, it&amp;rsquo;ll patch the &lt;code&gt;node&lt;/code&gt; binary and you&amp;rsquo;ll be able to execute it on NixOS.&lt;/p&gt;
+&lt;p&gt;To add the above script incorporated in your current build systems for NodeJS Projects, here&amp;rsquo;s a small addition to the shell script to only execute the function &lt;code&gt;patch_node_application&lt;/code&gt; (Responsible for patching the node binary) if it&amp;rsquo;s running on NixOS:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+if [ &amp;#34;cat /etc/os-release | grep &amp;#39;nixos&amp;#39;&amp;#34; ]; then
+	patch_node_application
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now the shell script will only be executed if the system is running NixOS, and the &lt;code&gt;node&lt;/code&gt; binary can now be executed too.&lt;/p&gt;
+&lt;p&gt;Thank you for reading! I&amp;rsquo;ll be writing more about ELF and Nix in the future.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thank You very much &lt;a href=&#34;https://cateroxl.github.io&#34;&gt;cateroxl&lt;/a&gt; for proofreading and editing the blog post.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

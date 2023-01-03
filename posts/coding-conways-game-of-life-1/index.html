@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Coding Conway&#39;s Game of Life - Cellular Automata - The Maths :: Nasir Hussain</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.
+In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.
+Without any further ado, Let&amp;rsquo;s take a dive into it.
+What is Cellular Automata? Cellular Automata is a field of Automata Theory which is a part of Discrete Maths." />
+<meta name="keywords" content="math,cloud,kubernetes,programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/coding-conways-game-of-life-1/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Coding Conway&#39;s Game of Life - Cellular Automata - The Maths">
+<meta property="og:description" content="In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.
+In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.
+Without any further ado, Let&amp;rsquo;s take a dive into it.
+What is Cellular Automata? Cellular Automata is a field of Automata Theory which is a part of Discrete Maths." />
+<meta property="og:url" content="/posts/coding-conways-game-of-life-1/" />
+<meta property="og:site_name" content="Nasir Hussain" />
+
+  
+    <meta property="og:image" content="/img/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="maths" />
+
+
+  <meta property="article:published_time" content="2023-01-01 19:25:32 &#43;0500 &#43;0500" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Nasir Hussain
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/coding-conways-game-of-life-1/">Coding Conway&rsquo;s Game of Life - Cellular Automata - The Maths</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2023-01-01 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/math/">math</a>&nbsp;
+      
+      #<a href="/tags/cellular-automata/">cellular-automata</a>&nbsp;
+      
+      #<a href="/tags/computational-theory/">computational-theory</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="/images/posts-static/exploring-google-cloud/pub_sub-512-color.png" alt="Conway&amp;rsquo;s Game of Life"></p>
+<p>In the past few days, I&rsquo;ve been exploring mathematics and it&rsquo;s various applications in Computational Theory and User Experience.</p>
+<p>In this part one, I&rsquo;ll be looking at Conway&rsquo;s Game of Life from the mathematical perspective and it&rsquo;s application on user experience.</p>
+<p>Without any further ado, Let&rsquo;s take a dive into it.</p>
+<h2 id="what-is-cellular-automata">What is Cellular Automata?<a href="#what-is-cellular-automata" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Cellular Automata is a field of Automata Theory which is a part of Discrete Maths. Automata Theory has applications in Physics, Computational Theory, Biology, etc. Automata Theory consists of the study of various Computational Classes: Combinatorial Logic, Finite-State Machines, Pushdown Automation and Turing Machines.</p>
+<p>Cellular Automata deals with Artificial life, which examines systems related to natural life, it&rsquo;s processes, it&rsquo;s evolution, through the usage of simulations with computer models.</p>
+<h3 id="cellular-automata---how-">Cellular Automata - How ??<a href="#cellular-automata---how-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Cellular Automata consists of a grid of cells, with discrete (finite states) e.g: On and Off. For each cell a set, a set of cells are called it&rsquo;s neighborhood. It also consists of a set of discrete rules which are applied on each iteration. An initial state (t=0) is selected by defining the state of various cells. Upon each iteration (t+1), The set of rules are applied upon the whole grid and then the change is the state of the neighboring cells is then observed.</p>
+<p>[Image for Grid of Cells, and state.]</p>
+<h2 id="conways-game-of-life">Conway&rsquo;s Game of Life<a href="#conways-game-of-life" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Conway&rsquo;s Game of Life is invented by the famous Mathematician, &ldquo;John Conway&rdquo;. It is also often referred as &ldquo;Life&rdquo;. It is a zero-player game, meaning for it&rsquo;s evolution to be defined by the initial state. It&rsquo;s played on an infinite two-dimentional grid (However, For the sake of computing it, we&rsquo;ll be using an nxn size for the grid).</p>
+<p>Each cell has eight neighboring cells which are horizontally, vertically, or diagonally adjacent.</p>
+<p>It consists of the following rules:</p>
+<ul>
+<li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+<li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+<li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+<li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+</ul>
+<p>Let&rsquo;s look at the rules in action. (GIF for Rules).</p>
+<p>Simple, Right ?</p>
+<p>It consists of a grid of squares, simple rules and simple states for each cell.</p>
+<h3 id="well-youre-in-for-a-treat-patterns">Well, You&rsquo;re in for a treat. Patterns:<a href="#well-youre-in-for-a-treat-patterns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>There are various patterns (alot !!) that are discovered. However, we&rsquo;ll be looking at some promiment ones below:</p>
+<ul>
+<li><strong>Still Life</strong>: It&rsquo;s the most obvious pattern we can think of, It&rsquo;s a state of cells, which are stabilized. Where neither cell is producing nor dying out.</li>
+<li><strong>Oscillators</strong>: It&rsquo;s another obvious pattern where a set of cells keep oscilating between two states.</li>
+</ul>
+<p>Simple rules, Simple patters, Huh ?</p>
+<p>Let&rsquo;s look at onther one:</p>
+<ul>
+<li><strong>Spaceships</strong>: A set of cells, which move together in one direction, leaving no traces behind. e.g: Glider (GIF below.)</li>
+</ul>
+<p>Cool, Isn&rsquo;t it. How about a Glider generator.</p>
+<ul>
+<li><strong>Glider Gun</strong>: It&rsquo;s a pattern, which keeps oscilating (like an oscillator) and periodically emits spaceships like the Glider. e.g: Gosper&rsquo;s Glider Gun creating gliders. (GIF).</li>
+</ul>
+<p>Hmm, how about some pattern that leaves some traces behind, Introducing:</p>
+<ul>
+<li><strong>Puffer</strong>: It&rsquo;s similar to a spaceship, however it leaves the traces behind. (Examples)</li>
+</ul>
+<h3 id="why-does-it-matter-">Why does it matter ?<a href="#why-does-it-matter-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Conway&rsquo;s game of life is a perfect example to demonstrate how complex behaviour can emerge from simple rules iterated overtime along with providing a simple way to trace back each iteration.</p>
+<p>It got me thinking about system design and how often times in order to develop a complex system, simplicity is often neglected. However, with simple rules we can create complex systems.</p>
+<p>Thank You for Reading ! Stay tuned, I&rsquo;ll be writing more about it and how to program it in Go Language.</p>
+<p>Looking forward to your feedback on the post.</p>
+<hr>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="/posts/exploring-google-cloud-pubsub/">
+                <span class="button__text">Exploring Google Cloud: Pub/Sub 101</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Nasir Hussain</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

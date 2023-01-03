@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on Nasir Hussain</title>
+    <link>/categories/talks/</link>
+    <description>Recent content in Talks on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sat, 15 Feb 2020 01:29:42 +0500</lastBuildDate><atom:link href="/categories/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to FOSS and Fedora Project</title>
+      <link>/talks/intro-foss-and-fedora-15-02-20/</link>
+      <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
+      
+      <guid>/talks/intro-foss-and-fedora-15-02-20/</guid>
+      <description>Introduction to Free and Open Source Software and Fedora Project Originally presented at Fedora 31 Release Party Karachi on 15th Feb 2020 in Karachi, Pakistan
+Key points What is FOSS, Free and Open Source Software Perks of contributing to a FOSS What is Fedora Project Four Foundations Where to contribute How to start contributing Slides Google Slides</description>
+      <content>&lt;h2 id=&#34;introduction-to-free-and-open-source-software-and-fedora-project&#34;&gt;Introduction to Free and Open Source Software and Fedora Project&lt;/h2&gt;
+&lt;p&gt;Originally presented at &lt;a href=&#34;https://communityblog.fedoraproject.org/fedora-31-release-party-karachi/&#34;&gt;Fedora 31 Release Party Karachi&lt;/a&gt; on 15th Feb 2020 in Karachi, Pakistan&lt;/p&gt;
+&lt;h3 id=&#34;key-points&#34;&gt;Key points&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;What is FOSS, Free and Open Source Software&lt;/li&gt;
+&lt;li&gt;Perks of contributing to a FOSS&lt;/li&gt;
+&lt;li&gt;What is Fedora Project
+&lt;ul&gt;
+&lt;li&gt;Four Foundations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Where to contribute&lt;/li&gt;
+&lt;li&gt;How to start contributing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;slides&#34;&gt;Slides&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/presentation/d/1XdlCRZMQUbzQZbF6SYHSoHrLFXLw4eFI5wXcCHj11Hw/edit?usp=sharing&#34;&gt;Google Slides&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

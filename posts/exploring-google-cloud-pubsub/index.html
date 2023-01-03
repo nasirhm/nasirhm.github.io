@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Exploring Google Cloud: Pub/Sub 101 :: Nasir Hussain</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.
+In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.
+We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.
+What is Cloud Pub/Sub?" />
+<meta name="keywords" content="math,cloud,kubernetes,programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/exploring-google-cloud-pubsub/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Exploring Google Cloud: Pub/Sub 101">
+<meta property="og:description" content="In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.
+In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.
+We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.
+What is Cloud Pub/Sub?" />
+<meta property="og:url" content="/posts/exploring-google-cloud-pubsub/" />
+<meta property="og:site_name" content="Nasir Hussain" />
+
+  
+    <meta property="og:image" content="/img/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="google" />
+
+
+  <meta property="article:published_time" content="2021-05-23 19:25:32 &#43;0500 &#43;0500" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Nasir Hussain
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/exploring-google-cloud-pubsub/">Exploring Google Cloud: Pub/Sub 101</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2021-05-23 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/gcp/">gcp</a>&nbsp;
+      
+      #<a href="/tags/google/">google</a>&nbsp;
+      
+      #<a href="/tags/cloud/">cloud</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><img src="/images/posts-static/exploring-google-cloud/pub_sub-512-color.png" alt="Google Pub Sub"></p>
+<p>In the past few days, I&rsquo;ve been exploring services in Google Cloud Platform and I&rsquo;ll be writing a series as &ldquo;Exploring Google Cloud&rdquo; to write about my learnings and take aways here.</p>
+<p>In this series, I&rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.</p>
+<p>We&rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.</p>
+<h2 id="what-is-cloud-pubsub">What is Cloud Pub/Sub?<a href="#what-is-cloud-pubsub" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Pub/Sub is short for Publish/Subscribe Messaging and it is an asynchronous messaging service that decouples services that produce events from services that process events.</p>
+<p><strong>Availability:</strong> Global (In all GCP Regions around the world)</p>
+<p>Let&rsquo;s dig a little deeper into it.</p>
+<p>It&rsquo;s used in event-driven applications, where we can have applications publishing and subscribing to events that are available as messages.</p>
+<p>As the name suggests, Pub/Sub Works in a Publisher / Subscriber model, Where a publisher publishes a message and the subscriber acknowledges that message.</p>
+<p>How do we make sure that the Publisher publishes to the right place and the subscriber is listening to the right place? It&rsquo;s where topics come in.</p>
+<h3 id="core-components">Core Components:<a href="#core-components" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Let&rsquo;s look at the Core constructs of what Pub/Sub is made of:</p>
+<ul>
+<li><strong>Topic:</strong> An intermediary channel that maintains a list of subscribers to relay messages to that are received from publishers</li>
+<li><strong>Message:</strong> Serialized messages sent to a topic by a publisher which has no knowledge of the subscribers</li>
+<li><strong>Publisher:</strong> An application which publishes a message to a topic.</li>
+<li><strong>Subscriber:</strong> An application that registers itself with the desired topic in order to receive the appropriate messages.</li>
+</ul>
+<h3 id="pubsub-model">Pub/Sub Model:<a href="#pubsub-model" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>As we now understand the Core components, Let&rsquo;s look at how the Pub/Sub Model Works:</p>
+<ul>
+<li>We start with creating a topic in Pub/Sub.</li>
+<li>We then create a subscription for that topic, It plays the subscriber part of the Pub/Sub.</li>
+<li>Now, we can publish messages in our Pub/Sub topic.</li>
+<li>The messages are available in our Pub/Sub topic, Now the subscriber can consume those messages by acknowledging them.</li>
+</ul>
+<p>Here&rsquo;s a pictorial overview of it:</p>
+<p><img src="/images/posts-static/exploring-google-cloud/gcp-pub-sub-01.png" alt="Google Cloud Pub/Sub Model Overview"></p>
+<p>In the example above, We&rsquo;ve got two seperate topics where messages will be published and a single consumer having two subscriptions providing the consumer the ability to consume messages from both the topics.</p>
+<p>The same can be done for a publisher, a single publisher can publish messages to multiple topics too.</p>
+<h3 id="some-benefits-of-cloud-pubsub">Some Benefits of Cloud Pub/Sub:<a href="#some-benefits-of-cloud-pubsub" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p><strong>Loose Coupling:</strong> Publishers are unaware of the subscribers presence. It provides the ability for the system to function independently of each other.</p>
+<p><strong>Scalability:</strong> Pub/sub messaging can scale to volumes beyond the capability of a single traditional data center.</p>
+<h3 id="lets-get-hands-on-with-it">Let&rsquo;s get hands-on with it.<a href="#lets-get-hands-on-with-it" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Once, you&rsquo;ve got your GCP account and gcloud CLI setup, We can make use of the gcloud CLI for this demo.</p>
+<h3 id="demo">Demo:<a href="#demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Let&rsquo;s assume the following scenario:</p>
+<p>We&rsquo;re running a Coffee Shop, Where customers have the ability to push messages to a topic with their order about cofee.</p>
+<p>On each station our Baristas are subscribed to the topic and can pull one message at the time and ackowledge it to start brewing coffee for the customer.</p>
+<h3 id="setup">Setup:<a href="#setup" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h4 id="creating-the-topic">Creating the topic:<a href="#creating-the-topic" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>To create the topic in pub/sub, we&rsquo;ll use glcoud CLI as following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ gcloud pubsub topics create coffee-shop
+</span></span></code></pre></div><p>As we&rsquo;ve got the topic created as <code>coffee-shop</code>, It&rsquo;s time for the barista to join as a subscriber.</p>
+<h4 id="creating-a-subscription-for-the-topic">Creating a subscription for the topic:<a href="#creating-a-subscription-for-the-topic" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ gcloud pubsub subscriptions create --topic coffee-shop barista
+</span></span></code></pre></div><p>In the above example, we&rsquo;re creating a subscription as <code>barista</code> which subscribes to the topic created in the past step.</p>
+<p>Yayyy !!, We&rsquo;re done with our setup for Pub/Sub. Now we can integrate it with our applications as subscribers and publishers.</p>
+<h4 id="publishing-and-consuming-messages">Publishing and Consuming Messages:<a href="#publishing-and-consuming-messages" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Let&rsquo;s assume, we&rsquo;ve got a customer, who needs an espresso with cinnamon, They can publish the following message in the <code>coffee-shop</code> topic as: <code>{&quot;coffee_type&quot;: &quot;espresso&quot;, &quot;cinnamon&quot;: &quot;true&quot;}</code></p>
+<p>We can use the gcloud CLI to publish this message as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ gcloud pubsub topics publish coffee-shop --message <span style="color:#e6db74">&#39;{&#34;coffee_type&#34;: &#34;espresso&#34;, &#34;cinnamon&#34;: &#34;true&#34;}&#39;</span>
+</span></span></code></pre></div><p>The gcloud CLI will publish the message on the <code>coffee-shop</code> topic.</p>
+<p>And then we&rsquo;ll have our barista free to take a coffee order, They can use their subscription to consume the messages, We&rsquo;ll use Gcloud CLI for it too:</p>
+<pre tabindex="0"><code>$ gcloud pubsub subscriptions pull barista --limit=1 --auto-ack
+</code></pre><p><strong>NOTE:</strong> We&rsquo;re using the <code>--limit</code> flag to make sure, we only receive one message from the topic.</p>
+<p><strong>NOTE:</strong> For the <code>--auto-ack</code> flag to automatically acknowledge the message.</p>
+<p>It&rsquo;s available there to make sure the consumer receives the message successfully by acknowledging it&rsquo;s receival.</p>
+<p>We can also manually acknowledge the messages, <a href="https://cloud.google.com/community/tutorials/pubsub-quickstart">Click here</a> to learn more about it.</p>
+<h2 id="summary">Summary:<a href="#summary" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Publish/subscribe messaging is when a publisher sends a message to a topic and the message is forwarded to a subscriber.</li>
+<li>The concept of pub/sub is easy to understand but every coding and programming language handles it differently, making it a little more challenging to learn across all platforms.</li>
+<li>On the edge, message delivery times can be two to four times faster by using a network backbone and multiple points of presence.</li>
+</ul>
+<p>Thank You for Reading ! Stay tuned, I&rsquo;ll be writing more about GCP Products and my experience with them in the near future.</p>
+<p>Looking forward to your feedback on the post.</p>
+<hr>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/posts/coding-conways-game-of-life-1/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Coding Conway&#39;s Game of Life - Cellular Automata - The Maths</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/posts/binaries-on-non-fhs-system/">
+                <span class="button__text">Running Pre-Built Binaries on Non-FHS *NIX Systems</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Nasir Hussain</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

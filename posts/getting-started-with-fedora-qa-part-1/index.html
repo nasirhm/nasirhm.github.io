@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Getting Started with Fedora QA - Part 1 :: Nasir Hussain</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.
+By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results." />
+<meta name="keywords" content="math,cloud,kubernetes,programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/getting-started-with-fedora-qa-part-1/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Getting Started with Fedora QA - Part 1">
+<meta property="og:description" content="What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.
+By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results." />
+<meta property="og:url" content="/posts/getting-started-with-fedora-qa-part-1/" />
+<meta property="og:site_name" content="Nasir Hussain" />
+
+  
+    <meta property="og:image" content="/img/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="fedora" />
+
+
+  <meta property="article:published_time" content="2020-04-07 17:29:03 &#43;0500 &#43;0500" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Nasir Hussain
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/getting-started-with-fedora-qa-part-1/">Getting Started with Fedora QA - Part 1</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2020-04-07 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/fedora/">fedora</a>&nbsp;
+      
+      #<a href="/tags/qa/">qa</a>&nbsp;
+      
+      #<a href="/tags/foss/">foss</a>&nbsp;
+      
+      #<a href="/tags/fedora-qa/">fedora-qa</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <blockquote>
+<!-- raw HTML omitted -->
+</blockquote>
+<h2 id="what-is-sqa-quality-assurance-">What is SQA (Quality Assurance) ?<a href="#what-is-sqa-quality-assurance-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>According to <a href="https://en.wikipedia.org/wiki/Software_quality_assurance">Wikipedia</a> : <strong>Software quality assurance (SQA)</strong> is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.</p>
+<p>By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.</p>
+<h2 id="why-quality-assurance-is-an-essential-component-for-fedora-project">Why Quality Assurance is an essential component for Fedora Project<a href="#why-quality-assurance-is-an-essential-component-for-fedora-project" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Fedora is an Open Source Linux distribution Operating System which releases once in every six months and as a result the environment becomes very fast paced and that could make things break among general users of the distro, to prevent that to happening to users &amp; to make sure everything works as expected, Quality Assurance is a must in Fedora Project. In Fedora, we have to encompass the user experience as there are thousands and thousands of people who expect a more stable &amp; feature enriched OS that gets better with each release.</p>
+<h2 id="fedora-release-cycle">Fedora Release Cycle<a href="#fedora-release-cycle" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Before we jump into practical tools, let&rsquo;s have a quick introduction to how the process works</p>
+<p><img src="/images/posts-static/getting-started-with-fedora-qa/fedorareleasecycle.png#align:left" alt="Fedora Release Cycle"></p>
+<p>The above diagram displays a clear demonstration of how Fedora creates it&rsquo;s release</p>
+<p>It includes these branches:</p>
+<p><strong>Rawhide</strong> serves as the upstream for the release branch, it&rsquo;s a bleeding edge, non freezing branch where contributors consitently push their packages, after a time slice we branch out different necessary packages and the Rawhide keeps on growing.</p>
+<p><strong>Branched Release</strong> is the version which gets branched out from the ongoing Rawhide &amp; starts to get tested &amp; refines for the release. As we reach this point, the QA team gets hands on with it :)</p>
+<h2 id="prerequisites">Prerequisites<a href="#prerequisites" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="fas-id--httpsadminfedoraprojectorgaccountshttpsadminfedoraprojectorgaccounts">FAS ID : <a href="https://admin.fedoraproject.org/accounts/">https://admin.fedoraproject.org/accounts/</a><a href="#fas-id--httpsadminfedoraprojectorgaccountshttpsadminfedoraprojectorgaccounts" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>A FAS (Fedora Account System) account is essential for you to get login access to all subprojects in Fedora with the same user ID and passwords.</p>
+<h3 id="bugzilla--httpsbugzillaredhatcomhttpsbugzillaredhatcom">Bugzilla : <a href="https://bugzilla.redhat.com/">https://bugzilla.redhat.com/</a><a href="#bugzilla--httpsbugzillaredhatcomhttpsbugzillaredhatcom" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Bugzilla serves as the bug tracking system for Fedora Project, with Bugzilla you can create &amp; verify bugs along with fixing some! :)</p>
+<p><strong>To register on Bugzilla</strong>, We recommend using your <code>@fedoraproject.org</code> email Alias, because in different places for QA you would require it.</p>
+<p><strong>NOTE</strong> : If you don&rsquo;t have a <code>@fedoraproject.org</code> email Alias, We have a good news for you, you can reach out to us on <a href="https://docs.fedoraproject.org/en-US/fedora-join/">Fedora Join</a> and we can provide you a temporary membership, which would give you the ability to attain your email Alias.</p>
+<p>After setting up your accounts, you can reach out to the <em>QA Team</em> on <strong>IRC</strong>, As it&rsquo;s the place where most of the QA team is available, The channel for Fedora QA is: <code>#fedora-qa</code> and for Matrix users, It&rsquo;s: <code>#freenode_#fedora-qa:matrix.org</code></p>
+<p>Another alternative to IRC, is mailing lists where you can have discussions with Fedora QA team, in case if you need any clarification or being faced by issues. Mailing list requires you to subscribe to it before you can post/ask/talk. The fedora QA mailing list resides here : <a href="https://lists.fedoraproject.org/admin/lists/test.lists.fedoraproject.org/">test</a></p>
+<p>To subscribe to the mailing list you would need a FAS ID too.</p>
+<p>Best of luck for starting QA with Fedora Project.</p>
+<p>The next post would be more about getting involved and hands on with QA.</p>
+<hr>
+<p>Thank You for reading, if you have any doubts or questions feel free to reach out to me here : <a href="/contact/">Contact</a></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/posts/badge-fedora-centos-social-summit20/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</span>
+            </a>
+        </span>
+        
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Nasir Hussain</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

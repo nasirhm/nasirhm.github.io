@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>badges on Nasir Hussain</title>
+    <link>/tags/badges/</link>
+    <description>Recent content in badges on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Mon, 30 Nov 2020 03:04:54 +0500</lastBuildDate><atom:link href="/tags/badges/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</title>
+      <link>/posts/badge-i-voted-f33/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      
+      <guid>/posts/badge-i-voted-f33/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+I Voted Fedora 33: What it&amp;rsquo;s about? The I Voted Fedora 33 Badge is categorized as Community Badge and it&amp;rsquo;s defined in this Pagure Ticket
+But What it&amp;rsquo;s all About ? In short, it&amp;rsquo;s what it says in the Description : &amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;. It is awarded to people who vote in the Fedora Elections.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/i-voted-f33.png&#34; alt=&#34;I Voted: Fedora 33 &amp;amp;ndash; Participated in the Fedora 33 Elections&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;i-voted-fedora-33-what-its-about&#34;&gt;I Voted Fedora 33: What it&amp;rsquo;s about?&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://badges.fedoraproject.org/badge/i-voted%3A-fedora-33&#34;&gt;I Voted Fedora 33 Badge&lt;/a&gt; is categorized as &lt;strong&gt;Community Badge&lt;/strong&gt; and it&amp;rsquo;s defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/725&#34;&gt;Pagure Ticket&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;but-what-its-all-about-&#34;&gt;But What it&amp;rsquo;s all About ?&lt;/h3&gt;
+&lt;p&gt;In short, it&amp;rsquo;s what it says in the Description : &lt;em&gt;&amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;&lt;/em&gt;. It is awarded to people who vote in the &lt;a href=&#34;https://elections.fedoraproject.org/&#34;&gt;Fedora Elections&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-are-fedora-elections-&#34;&gt;What are Fedora Elections ?&lt;/h4&gt;
+&lt;p&gt;Fedora has several elected bodies that regularly conduct elections every release cycle. In addition, Fedora teams can request one-off elections from the Fedora Program Manager when trying to select new leadership or otherwise reach a decision through a formal voting process.&lt;/p&gt;
+&lt;p&gt;We currently have 3 Open Elections, that takes place every release whenever we have a free seat including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FESCo (Engineering) [Fedora Engineering &amp;amp; Steering Committee]&lt;/li&gt;
+&lt;li&gt;Mindshare Committee. (Community) [I&amp;rsquo;m running for the Mindshare seat this year too]&lt;/li&gt;
+&lt;li&gt;Fedora Council.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-the-election-process-works-&#34;&gt;How the Election Process works ?&lt;/h4&gt;
+&lt;p&gt;Fedora Implements a &lt;strong&gt;Range voting system&lt;/strong&gt;, which works on the principle of allowing voters to rate as many candidates as they want on scale from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;4&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This method is designed to give voters the option of splitting their vote and showing their level of preference of a subset of candidates over another.&lt;/p&gt;
+&lt;p&gt;Once voting ends, votes are tallied using the summing method (addition of all votes) to generate a final score for a candidate.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-i-voted-fedora-33-&#34;&gt;How do I earn &amp;ldquo;I Voted: Fedora 33&amp;rdquo; ?&lt;/h2&gt;
+&lt;p&gt;Earning &lt;strong&gt;I Voted: Fedora 33&lt;/strong&gt; is pretty easy &amp;amp; can be only obtained till &lt;strong&gt;Thursday, December 3rd 2020, 23:59:59 UTC&lt;/strong&gt;, The process is pretty simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To vote for Different elections, there are different eligiblity crieteria:
+&lt;ul&gt;
+&lt;li&gt;To vote for the Fedora Council you must have &lt;em&gt;cla_done&lt;/em&gt; in FAS.&lt;/li&gt;
+&lt;li&gt;To vote for FESCo you must have &lt;em&gt;cla_done&lt;/em&gt; + one other &lt;em&gt;&amp;ldquo;non-cla&amp;rdquo;&lt;/em&gt; group in FAS.&lt;/li&gt;
+&lt;li&gt;To vote for Mindshare you must have a &lt;em&gt;cla_done&lt;/em&gt; in FAS.&lt;/li&gt;
+&lt;li&gt;In Case, You&amp;rsquo;re not eligible, You can create a ticket &lt;a href=&#34;https://pagure.io/fedora-project-schedule/new_issue&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Once you&amp;rsquo;re eligible, You can head over to the Fedora Elections App &lt;a href=&#34;https://elections.fedoraproject.org/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Login with your FAS ID.&lt;/li&gt;
+&lt;li&gt;One you&amp;rsquo;re logged in, A page would appear with a list of all the Open Election&lt;/li&gt;
+&lt;li&gt;Then you can click on &lt;code&gt;Vote Now&lt;/code&gt; in the Open election you would like to vote on.&lt;/li&gt;
+&lt;li&gt;The Voting page would appear with all the Candidates for the specific election along with their Interviews to get to know them better&lt;/li&gt;
+&lt;li&gt;Once you select the votes in the Range counter and when you would select Preview your Vote -&amp;gt; Submit Your Vote, A unique link would be generated to claim the badge.&lt;/li&gt;
+&lt;li&gt;On clicking the link, it would redirect you to a Fedora Badges link where you can sign in and it would automatically award you the badge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Best of Luck with Claiming the Badge.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: Fedora Social Panda</title>
+      <link>/posts/badge-fedora-social-hour/</link>
+      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
+      
+      <guid>/posts/badge-fedora-social-hour/</guid>
+      <description>This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-19 is getting pretty real and resulting in people performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated so out Fedora Project Leader Matthew Miller &amp;amp; Fedora Project Contributor Neal Gompa had the idea to have a Fedora Social Hour where folks could Chat &amp;amp; get a little e-human contact and conversation.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/virtual-social-hours-badge.png&#34; alt=&#34;Fedora Social Panda&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fedora-social-panda-whats-it-about&#34;&gt;Fedora Social Panda: What&amp;rsquo;s it about?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;How It all Started is,&lt;/strong&gt; As COVID-19 is getting pretty real and resulting in people
+performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated
+so out Fedora Project Leader &lt;strong&gt;Matthew Miller&lt;/strong&gt; &amp;amp; Fedora Project Contributor &lt;strong&gt;Neal Gompa&lt;/strong&gt; had the idea to have a Fedora Social Hour
+where folks could Chat &amp;amp; get a little e-human contact and conversation.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s focus on the badge now, As we have activities in Fedora, We have Badges, the &lt;a href=&#34;https://badges.fedoraproject.org/badge/social-panda&#34;&gt;Fedora Social Panda&lt;/a&gt;
+badge is categorized as &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s crieteria is defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/731&#34;&gt;Pagure ticket&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In short, The &lt;em&gt;Fedora Social Panda&lt;/em&gt; Badge is awarded to folks we participate in a &lt;a href=&#34;https://communityblog.fedoraproject.org/come-socialize-at-the-fedora-social-hour-2/&#34;&gt;Fedora Social Hour&lt;/a&gt; with the Community.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-fedora-social-panda&#34;&gt;How do I earn &amp;ldquo;Fedora Social Panda&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;In order to earn this badge, you would have to join a weekly fedora social hour.&lt;/p&gt;
+&lt;h3 id=&#34;how-do-i-know-when-its-happening&#34;&gt;How do I know when it&amp;rsquo;s happening?&lt;/h3&gt;
+&lt;p&gt;To know when a Fedora Social Hour will be organized, Keep an eye on the &lt;a href=&#34;https://communityblog.fedoraproject.org/&#34;&gt;Fedora Community Blog&lt;/a&gt;, As that&amp;rsquo;s where most of the announcements are made for the Community.&lt;/p&gt;
+&lt;p&gt;Another preffered way is to keep an eye is by joining the &lt;a href=&#34;https://riot.im/app/#/room/#fedora-social-hour:matrix.org&#34;&gt;Fedora Social Hour&lt;/a&gt; on Riot.im, As this is where we have our Social Hours nowadays, as it has Jitsi &amp;amp; Etherpad widgets that we&amp;rsquo;ve implemented.&lt;/p&gt;
+&lt;p&gt;If you would like to stick with the Freenode IRC Channel, it&amp;rsquo;s &lt;code&gt;#fedora-social-hour&lt;/code&gt; on Freenode IRC that is bridged with the Matrix Room.&lt;/p&gt;
+&lt;p&gt;Once, You attend a Fedora Social Hour, you can share your &lt;code&gt;FAS ID&lt;/code&gt; for the organizers to award that badge to you.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Looking forward to see you all in the next Fedora Social Hour, I&amp;rsquo;m &lt;code&gt;nasirhm&lt;/code&gt; there. :D&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</title>
+      <link>/posts/badge-fedora-centos-social-summit20/</link>
+      <pubDate>Wed, 29 Apr 2020 06:19:13 +0500</pubDate>
+      
+      <guid>/posts/badge-fedora-centos-social-summit20/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about? The Fedora &amp;amp; CentOS Social @ Summit 2020 badge is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this Pagure ticket But what it&amp;rsquo;s all about?
+In short, the Fedora &amp;amp; CentOS Social @ Summit 2020 badge is awarded to people who attended the Red Hat Virtual Summit 2020 &amp;amp; Participated in The Fedora Chatroom on April 28-29.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/rh-2020-fedora-badge.png&#34; alt=&#34;Fedora &amp;amp; CentOS Social @ Summit 2020&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fedora--centos-social--summit-2020-whats-it-about&#34;&gt;Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about?&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://badges.fedoraproject.org/badge/fedora--centos-social-%40-summit-2020&#34;&gt;Fedora &amp;amp; CentOS Social @ Summit 2020 badge&lt;/a&gt; is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/735&#34;&gt;Pagure ticket&lt;/a&gt;
+&lt;em&gt;But what it&amp;rsquo;s all about&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;In short, the &lt;em&gt;Fedora &amp;amp; CentOS Social @ Summit 2020&lt;/em&gt; badge is awarded to people who attended the &lt;a href=&#34;https://www.redhat.com/en/summit&#34;&gt;Red Hat Virtual Summit 2020&lt;/a&gt; &amp;amp; Participated in The Fedora Chatroom on April 28-29.
+There are some really awesome Fedora &amp;amp; CentOS folks having some really insightful &amp;amp; fun discussions there. This badge is a fun way to represent your participation in the Redhat Virtual Summit 2020 on the Fedora &amp;amp; CentOS Chatroom.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-fedora--centos-social--summit-2020-&#34;&gt;How Do i earn &amp;ldquo;Fedora &amp;amp; CentOS Social @ Summit 2020&amp;rdquo; ?&lt;/h2&gt;
+&lt;p&gt;Earning &lt;em&gt;Fedora &amp;amp; CentOS Social @ Summit 2020&lt;/em&gt; is pretty easy &amp;amp; can only be attained on April 28-29 2020. The steps are pretty Simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sign Up/Sign In for the &lt;a href=&#34;https://www.redhat.com/en/summit&#34;&gt;Redhat Virtual Summit 2020&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;After logging in, Goto, Explore -&amp;gt; Community Central -&amp;gt; Fedora/CentOS&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communicate&lt;/strong&gt; your thoughts/ideas in the live chat.&lt;/li&gt;
+&lt;li&gt;Dont&amp;rsquo;t forget to share your FAS id in the live chat, For the badge to be awarded. :D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;In Case, you don&amp;rsquo;t have a FAS Id, here&amp;rsquo;s a link to &lt;a href=&#34;https://admin.fedoraproject.org/accounts/user/new&#34;&gt;sign up&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : This &lt;em&gt;Badge&lt;/em&gt; can only be awarded on April 28-29 2020, As it&amp;rsquo;s about Redhat Virtual Summit, One Day&amp;rsquo;s left (When I&amp;rsquo;m writing this article).&lt;/p&gt;
+&lt;p&gt;Looking forward to see you all in the Fedora &amp;amp; CentOS Social at Redhat Summit.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

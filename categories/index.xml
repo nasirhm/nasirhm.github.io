@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Nasir Hussain</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 19:25:32 +0500</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>maths</title>
+      <link>/categories/maths/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/categories/maths/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>/categories/google/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/categories/google/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>/categories/linux/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/categories/linux/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>nix</title>
+      <link>/categories/nix/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/categories/nix/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>/categories/fedora/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      
+      <guid>/categories/fedora/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>/categories/talks/</link>
+      <pubDate>Sat, 15 Feb 2020 01:29:42 +0500</pubDate>
+      
+      <guid>/categories/talks/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

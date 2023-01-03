@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Running Pre-Built Binaries on Non-FHS *NIX Systems :: Nasir Hussain</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.
+We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.
+This exception occurs when it is unable to find one of the ELF libraries required to execute the binary." />
+<meta name="keywords" content="math,cloud,kubernetes,programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/binaries-on-non-fhs-system/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Running Pre-Built Binaries on Non-FHS *NIX Systems">
+<meta property="og:description" content="Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.
+We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.
+This exception occurs when it is unable to find one of the ELF libraries required to execute the binary." />
+<meta property="og:url" content="/posts/binaries-on-non-fhs-system/" />
+<meta property="og:site_name" content="Nasir Hussain" />
+
+  
+    <meta property="og:image" content="/img/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="nix" />
+
+  <meta property="article:section" content="linux" />
+
+
+  <meta property="article:published_time" content="2021-01-20 00:28:56 &#43;0500 &#43;0500" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Nasir Hussain
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/talks">Talks</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/binaries-on-non-fhs-system/">Running Pre-Built Binaries on Non-FHS *NIX Systems</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2021-01-20 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/nix/">nix</a>&nbsp;
+      
+      #<a href="/tags/binaries/">binaries</a>&nbsp;
+      
+      #<a href="/tags/linux/">linux</a>&nbsp;
+      
+      #<a href="/tags/nodejs/">nodejs</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.</p>
+<p>We&rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: <code>The file '&lt;executable_file_name&gt;' does not exist or could not be executed.</code></p>
+<p>This exception occurs when it is unable to find one of the ELF libraries required to execute the binary.</p>
+<p>In this blog post, we&rsquo;ll be digging into it a little deeper to understand &amp; find a solution:</p>
+<hr>
+<h1 id="how-do-binaries-work-in-linux">How do binaries work in Linux?<a href="#how-do-binaries-work-in-linux" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Binaries are a set of instructions that are understood by the machine to perform a specific task.</p>
+<p>Our day-to-day interaction with our terminal CLI (Command Line Interface) includes usage of programs like: <code>bash</code>, <code>grep</code>, <code>ls</code>, <code>cd</code>, etc., which are available typically in our: <code>/bin</code> (binary) directory. Example: We can use <code>which</code> (a binary itself) to find the location of the <code>bash</code> program:</p>
+<pre tabindex="0"><code>$ which bash
+/bin/bash
+</code></pre><p>This provides us information on where the program is located on the disk.</p>
+<p>Similar to standards being followed in our day-to-day life, binaries also follow a certain standard known as <strong>ELF</strong> or the Executable and Linkable Format.</p>
+<h2 id="elf-standard-for-binaries">ELF Standard for Binaries<a href="#elf-standard-for-binaries" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>ELF (Executable and Linkable Format) standard is used to let the Operating System know some information about how to execute the program.
+It&rsquo;s something that we don&rsquo;t interact with much on our daily basis, but can be quite helpful with debugging. ELF standard makes us extend our program to work efficiently at runtime.</p>
+<p>Example: To run a C program, we don&rsquo;t need the entire implementation of the C language itself in the codebase. Instead, we link a library (glibc) with our binary to let it know that it needs the C library to be executed.</p>
+<p>Sounds pretty cool, right?</p>
+<p>Let&rsquo;s get back to the problem now.</p>
+<p>As described earlier, the error: <code>The file '&lt;executable_file_name&gt;' does not exist or could not be found</code> occurs whenever there&rsquo;s a dependency on a library that the binary is not able to find.</p>
+<h3 id="lets-get-to-the-debugging-part">Let&rsquo;s get to the debugging part<a href="#lets-get-to-the-debugging-part" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>One thing that I love about UNIX-based systems is that we have the tools to debug almost everything. To get the list of dependencies or libraries required by a binary, we can use the <code>ldd</code> command.
+It prints the shared libraries required by the program on the command line. As an example. let&rsquo;s see what a pre-compiled binary of NodeJS requires:</p>
+<pre tabindex="0"><code>$ ldd ./node
+
+		linux-vdso.so.1 (0x00007fff00bf9000)
+		libdl.so.2 =&gt; /lib/libdl.so.2 (0x00007fc857f59000)
+		libstdc++.so.6 =&gt; not found
+		libm.so.6 =&gt; /lib/libm.so.6 (0x00007fc857e18000)
+		libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x00007fc857dfe000)
+		libpthread.so.0 =&gt; /lib/libpthread.so.0 (0x00007fc857ddd000)
+		libc.so.6 =&gt; /lib/libc.so.6 (0x00007fc857c1e000)
+		/lib64/ld-linux-x86-64.so.2 =&gt; /lib64/ld-linux-x86-64.so.2 (0x00007fc857f60000)
+</code></pre><p>Upon executing the program, it returns the following error:</p>
+<pre tabindex="0"><code>$ ./node
+
+Failed to execute process &#39;./node&#39;. Reason:
+The file &#39;./node&#39; does not exist or could not be executed.
+</code></pre><p>Do you know what the problem is? You guessed it right. It&rsquo;s the <code>libstdc++.so.6</code> library that is causing our binary to not execute.</p>
+<p>Now that we know what&rsquo;s causing the issue, let&rsquo;s fix it.</p>
+<h4 id="for-fhs-filesystem-hirearchy-standard-distros-debian-ubuntu-etc">For FHS (FileSystem Hirearchy Standard) Distros (Debian, Ubuntu, etc.)<a href="#for-fhs-filesystem-hirearchy-standard-distros-debian-ubuntu-etc" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>As in FHS systems, we make some assumptions regarding our system which includes that all the libraries will be in <code>/lib</code> or relevant directories. It&rsquo;s, then, easier to fix the issue.</p>
+<p>In FHS standardized / compliant Linux distributions it can be easily solved by installing the relevant library&rsquo;s package.</p>
+<p>Example: For <code>libstdc++.6</code>:</p>
+<p>On Debian/Ubuntu based distros: <code>apt-get install libstdc++6</code></p>
+<p>On CentOS/Fedora based distros: <code>yum install libstdcxx</code></p>
+<p>Once installed, it&rsquo;ll be available in the <code>/lib</code> directory resulting in the ELF loader to find the library in <code>/lib</code>. You would then be able to execute <code>node</code> as following:</p>
+<pre tabindex="0"><code>$ ./node
+Welcome to Node.js v14.15.4.
+Type &#34;.help&#34; for more information
+&gt;
+</code></pre><p>Woohoo, it worked. Now let&rsquo;s see how to fix it in non-FHS distributions, where we don&rsquo;t have a global <code>/lib</code> directory. :D</p>
+<h4 id="for-non-fhs-distros-nixos-etc">For Non-FHS Distros (NixOS, etc):<a href="#for-non-fhs-distros-nixos-etc" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>To maintain the non-global state of a system in non-FHS distributions, we would not be modifying the state of our system. We will be patching the ELF binary to work correctly. Example in NixOS:</p>
+<p>NixOS provides a tool: <a href="https://github.com/NixOS/patchelf">patchelf</a> which is a small utility that provides us the ability to patch pre-compiled binaries without having to play with machine code (0s and 1s).</p>
+<p>Let&rsquo;s get started, we first need to find where out <code>libstdc++.so.6</code> file lives in our <code>/nix/store</code>, which can be found via the following shell function:</p>
+<pre tabindex="0"><code>function find_stdcplusplus_in_nix_store(){
+		local _fileName=&#34;libstdc++.so.6&#34;;
+		ls /nix/store | grep &#34;gcc&#34; | grep &#34;lib&#34; \
+		| awk -v file=&#34;${_fileName}&#34; &#39;{printf(&#34;find /nix/store/%s -name %s\n&#34;);}&#39; | sh \
+		| awk -F&#39;-&#39; &#39;{printf(&#34;%s %s\n&#34;, $3, $0);}&#39; | sort | tail -n 1 | awk &#39;{print $2;}&#39;
+}
+</code></pre><p>It&rsquo;ll return the full path of the library/the file name <code>libstdc++.so.6</code>. It&rsquo;ll be something like: <code>/nix/store/gcc-&lt;hash&gt;/lib/libstdc++.so.6</code>.</p>
+<p>We need to get to know the directory where our library lives. To find it, we can execute the following function:</p>
+<pre tabindex="0"><code>...
+function find_stdcplusplus_parent_dir_in_nix_store(){
+		local _file=&#34;$(find_stdcplusplus_in_nix_store)&#34;;
+		dirname &#34;${_file}&#34;;
+}
+
+nix_store_location=$(find_stdcplusplus_dir_in_nix_store)
+</code></pre><p>It returns the directory where the library exists i.e: <code>/nix/store/gcc-&lt;hash&gt;/lib</code> and stores it in a global variable as <code>nix_store_location</code>.</p>
+<p>Now it&rsquo;s time for the final operation in which we will be creating shell environment/s with <code>patchelf</code> using <code>nix-shell</code> to patch the ELF binary:</p>
+<pre tabindex="0"><code>...
+function patch_node_application(){
+		nix-shell -p patchelf --run &#39;patchelf --set-rpath $nix_store_location bin/node&#39;
+		nix-shell -p patchelf --run &#39;patchelf --set-interpreter &#34;$(cat $NIX_CC/nix-support/dynamic-linker)&#34; bin/node&#39;
+}
+</code></pre><p>The first line within the function adds an <code>rpath</code> (runtime search path) to let our loader know that <code>libstdc++</code> can be found in a specific directory in the Nix store.</p>
+<p>The second line, with the ELF binary, the dynamic loader (ELF interpreter) is set to a static path which is generally not available under NixOS at: <code>lib64/ld-linux-x86-64.so.2</code>. We&rsquo;re changing it to the dynamic loader available at <code>$NIX_CC/nix-support/dynamic-linker</code>.</p>
+<p>After executing the function <code>patch_node_application</code>, it&rsquo;ll patch the <code>node</code> binary and you&rsquo;ll be able to execute it on NixOS.</p>
+<p>To add the above script incorporated in your current build systems for NodeJS Projects, here&rsquo;s a small addition to the shell script to only execute the function <code>patch_node_application</code> (Responsible for patching the node binary) if it&rsquo;s running on NixOS:</p>
+<pre tabindex="0"><code>...
+if [ &#34;cat /etc/os-release | grep &#39;nixos&#39;&#34; ]; then
+	patch_node_application
+fi
+</code></pre><p>Now the shell script will only be executed if the system is running NixOS, and the <code>node</code> binary can now be executed too.</p>
+<p>Thank you for reading! I&rsquo;ll be writing more about ELF and Nix in the future.</p>
+<p>Looking forward to your feedback on the post.</p>
+<hr>
+<p>Thank You very much <a href="https://cateroxl.github.io">cateroxl</a> for proofreading and editing the blog post.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/posts/exploring-google-cloud-pubsub/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Exploring Google Cloud: Pub/Sub 101</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/posts/getting-started-with-nix-introduction/">
+                <span class="button__text">Getting Started With Nix: Introduction</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Nasir Hussain</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

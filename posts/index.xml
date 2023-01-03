@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Nasir Hussain</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Nasir Hussain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Nasir Hussain</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 19:25:32 +0500</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding Conway&#39;s Game of Life - Cellular Automata - The Maths</title>
+      <link>/posts/coding-conways-game-of-life-1/</link>
+      <pubDate>Sun, 01 Jan 2023 19:25:32 +0500</pubDate>
+      
+      <guid>/posts/coding-conways-game-of-life-1/</guid>
+      <description>In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.
+In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.
+Without any further ado, Let&amp;rsquo;s take a dive into it.
+What is Cellular Automata? Cellular Automata is a field of Automata Theory which is a part of Discrete Maths.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/pub_sub-512-color.png&#34; alt=&#34;Conway&amp;amp;rsquo;s Game of Life&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the past few days, I&amp;rsquo;ve been exploring mathematics and it&amp;rsquo;s various applications in Computational Theory and User Experience.&lt;/p&gt;
+&lt;p&gt;In this part one, I&amp;rsquo;ll be looking at Conway&amp;rsquo;s Game of Life from the mathematical perspective and it&amp;rsquo;s application on user experience.&lt;/p&gt;
+&lt;p&gt;Without any further ado, Let&amp;rsquo;s take a dive into it.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-cellular-automata&#34;&gt;What is Cellular Automata?&lt;/h2&gt;
+&lt;p&gt;Cellular Automata is a field of Automata Theory which is a part of Discrete Maths. Automata Theory has applications in Physics, Computational Theory, Biology, etc. Automata Theory consists of the study of various Computational Classes: Combinatorial Logic, Finite-State Machines, Pushdown Automation and Turing Machines.&lt;/p&gt;
+&lt;p&gt;Cellular Automata deals with Artificial life, which examines systems related to natural life, it&amp;rsquo;s processes, it&amp;rsquo;s evolution, through the usage of simulations with computer models.&lt;/p&gt;
+&lt;h3 id=&#34;cellular-automata---how-&#34;&gt;Cellular Automata - How ??&lt;/h3&gt;
+&lt;p&gt;Cellular Automata consists of a grid of cells, with discrete (finite states) e.g: On and Off. For each cell a set, a set of cells are called it&amp;rsquo;s neighborhood. It also consists of a set of discrete rules which are applied on each iteration. An initial state (t=0) is selected by defining the state of various cells. Upon each iteration (t+1), The set of rules are applied upon the whole grid and then the change is the state of the neighboring cells is then observed.&lt;/p&gt;
+&lt;p&gt;[Image for Grid of Cells, and state.]&lt;/p&gt;
+&lt;h2 id=&#34;conways-game-of-life&#34;&gt;Conway&amp;rsquo;s Game of Life&lt;/h2&gt;
+&lt;p&gt;Conway&amp;rsquo;s Game of Life is invented by the famous Mathematician, &amp;ldquo;John Conway&amp;rdquo;. It is also often referred as &amp;ldquo;Life&amp;rdquo;. It is a zero-player game, meaning for it&amp;rsquo;s evolution to be defined by the initial state. It&amp;rsquo;s played on an infinite two-dimentional grid (However, For the sake of computing it, we&amp;rsquo;ll be using an nxn size for the grid).&lt;/p&gt;
+&lt;p&gt;Each cell has eight neighboring cells which are horizontally, vertically, or diagonally adjacent.&lt;/p&gt;
+&lt;p&gt;It consists of the following rules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any live cell with fewer than two live neighbours dies, as if by underpopulation.&lt;/li&gt;
+&lt;li&gt;Any live cell with two or three live neighbours lives on to the next generation.&lt;/li&gt;
+&lt;li&gt;Any live cell with more than three live neighbours dies, as if by overpopulation.&lt;/li&gt;
+&lt;li&gt;Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the rules in action. (GIF for Rules).&lt;/p&gt;
+&lt;p&gt;Simple, Right ?&lt;/p&gt;
+&lt;p&gt;It consists of a grid of squares, simple rules and simple states for each cell.&lt;/p&gt;
+&lt;h3 id=&#34;well-youre-in-for-a-treat-patterns&#34;&gt;Well, You&amp;rsquo;re in for a treat. Patterns:&lt;/h3&gt;
+&lt;p&gt;There are various patterns (alot !!) that are discovered. However, we&amp;rsquo;ll be looking at some promiment ones below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Still Life&lt;/strong&gt;: It&amp;rsquo;s the most obvious pattern we can think of, It&amp;rsquo;s a state of cells, which are stabilized. Where neither cell is producing nor dying out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Oscillators&lt;/strong&gt;: It&amp;rsquo;s another obvious pattern where a set of cells keep oscilating between two states.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Simple rules, Simple patters, Huh ?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at onther one:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spaceships&lt;/strong&gt;: A set of cells, which move together in one direction, leaving no traces behind. e.g: Glider (GIF below.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cool, Isn&amp;rsquo;t it. How about a Glider generator.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Glider Gun&lt;/strong&gt;: It&amp;rsquo;s a pattern, which keeps oscilating (like an oscillator) and periodically emits spaceships like the Glider. e.g: Gosper&amp;rsquo;s Glider Gun creating gliders. (GIF).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hmm, how about some pattern that leaves some traces behind, Introducing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Puffer&lt;/strong&gt;: It&amp;rsquo;s similar to a spaceship, however it leaves the traces behind. (Examples)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-does-it-matter-&#34;&gt;Why does it matter ?&lt;/h3&gt;
+&lt;p&gt;Conway&amp;rsquo;s game of life is a perfect example to demonstrate how complex behaviour can emerge from simple rules iterated overtime along with providing a simple way to trace back each iteration.&lt;/p&gt;
+&lt;p&gt;It got me thinking about system design and how often times in order to develop a complex system, simplicity is often neglected. However, with simple rules we can create complex systems.&lt;/p&gt;
+&lt;p&gt;Thank You for Reading ! Stay tuned, I&amp;rsquo;ll be writing more about it and how to program it in Go Language.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Exploring Google Cloud: Pub/Sub 101</title>
+      <link>/posts/exploring-google-cloud-pubsub/</link>
+      <pubDate>Sun, 23 May 2021 19:25:32 +0500</pubDate>
+      
+      <guid>/posts/exploring-google-cloud-pubsub/</guid>
+      <description>In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.
+In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.
+We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.
+What is Cloud Pub/Sub?</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/pub_sub-512-color.png&#34; alt=&#34;Google Pub Sub&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the past few days, I&amp;rsquo;ve been exploring services in Google Cloud Platform and I&amp;rsquo;ll be writing a series as &amp;ldquo;Exploring Google Cloud&amp;rdquo; to write about my learnings and take aways here.&lt;/p&gt;
+&lt;p&gt;In this series, I&amp;rsquo;ll be writing about Google Cloud Products which we can explore in our 300$ trial period.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll be starting with one of the awesome products provided to us by Google Cloud called Pub/Sub.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-cloud-pubsub&#34;&gt;What is Cloud Pub/Sub?&lt;/h2&gt;
+&lt;p&gt;Pub/Sub is short for Publish/Subscribe Messaging and it is an asynchronous messaging service that decouples services that produce events from services that process events.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Availability:&lt;/strong&gt; Global (In all GCP Regions around the world)&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s dig a little deeper into it.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s used in event-driven applications, where we can have applications publishing and subscribing to events that are available as messages.&lt;/p&gt;
+&lt;p&gt;As the name suggests, Pub/Sub Works in a Publisher / Subscriber model, Where a publisher publishes a message and the subscriber acknowledges that message.&lt;/p&gt;
+&lt;p&gt;How do we make sure that the Publisher publishes to the right place and the subscriber is listening to the right place? It&amp;rsquo;s where topics come in.&lt;/p&gt;
+&lt;h3 id=&#34;core-components&#34;&gt;Core Components:&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the Core constructs of what Pub/Sub is made of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Topic:&lt;/strong&gt; An intermediary channel that maintains a list of subscribers to relay messages to that are received from publishers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message:&lt;/strong&gt; Serialized messages sent to a topic by a publisher which has no knowledge of the subscribers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Publisher:&lt;/strong&gt; An application which publishes a message to a topic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subscriber:&lt;/strong&gt; An application that registers itself with the desired topic in order to receive the appropriate messages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pubsub-model&#34;&gt;Pub/Sub Model:&lt;/h3&gt;
+&lt;p&gt;As we now understand the Core components, Let&amp;rsquo;s look at how the Pub/Sub Model Works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We start with creating a topic in Pub/Sub.&lt;/li&gt;
+&lt;li&gt;We then create a subscription for that topic, It plays the subscriber part of the Pub/Sub.&lt;/li&gt;
+&lt;li&gt;Now, we can publish messages in our Pub/Sub topic.&lt;/li&gt;
+&lt;li&gt;The messages are available in our Pub/Sub topic, Now the subscriber can consume those messages by acknowledging them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;rsquo;s a pictorial overview of it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/posts-static/exploring-google-cloud/gcp-pub-sub-01.png&#34; alt=&#34;Google Cloud Pub/Sub Model Overview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the example above, We&amp;rsquo;ve got two seperate topics where messages will be published and a single consumer having two subscriptions providing the consumer the ability to consume messages from both the topics.&lt;/p&gt;
+&lt;p&gt;The same can be done for a publisher, a single publisher can publish messages to multiple topics too.&lt;/p&gt;
+&lt;h3 id=&#34;some-benefits-of-cloud-pubsub&#34;&gt;Some Benefits of Cloud Pub/Sub:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Loose Coupling:&lt;/strong&gt; Publishers are unaware of the subscribers presence. It provides the ability for the system to function independently of each other.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scalability:&lt;/strong&gt; Pub/sub messaging can scale to volumes beyond the capability of a single traditional data center.&lt;/p&gt;
+&lt;h3 id=&#34;lets-get-hands-on-with-it&#34;&gt;Let&amp;rsquo;s get hands-on with it.&lt;/h3&gt;
+&lt;p&gt;Once, you&amp;rsquo;ve got your GCP account and gcloud CLI setup, We can make use of the gcloud CLI for this demo.&lt;/p&gt;
+&lt;h3 id=&#34;demo&#34;&gt;Demo:&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s assume the following scenario:&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re running a Coffee Shop, Where customers have the ability to push messages to a topic with their order about cofee.&lt;/p&gt;
+&lt;p&gt;On each station our Baristas are subscribed to the topic and can pull one message at the time and ackowledge it to start brewing coffee for the customer.&lt;/p&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup:&lt;/h3&gt;
+&lt;h4 id=&#34;creating-the-topic&#34;&gt;Creating the topic:&lt;/h4&gt;
+&lt;p&gt;To create the topic in pub/sub, we&amp;rsquo;ll use glcoud CLI as following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub topics create coffee-shop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we&amp;rsquo;ve got the topic created as &lt;code&gt;coffee-shop&lt;/code&gt;, It&amp;rsquo;s time for the barista to join as a subscriber.&lt;/p&gt;
+&lt;h4 id=&#34;creating-a-subscription-for-the-topic&#34;&gt;Creating a subscription for the topic:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub subscriptions create --topic coffee-shop barista
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the above example, we&amp;rsquo;re creating a subscription as &lt;code&gt;barista&lt;/code&gt; which subscribes to the topic created in the past step.&lt;/p&gt;
+&lt;p&gt;Yayyy !!, We&amp;rsquo;re done with our setup for Pub/Sub. Now we can integrate it with our applications as subscribers and publishers.&lt;/p&gt;
+&lt;h4 id=&#34;publishing-and-consuming-messages&#34;&gt;Publishing and Consuming Messages:&lt;/h4&gt;
+&lt;p&gt;Let&amp;rsquo;s assume, we&amp;rsquo;ve got a customer, who needs an espresso with cinnamon, They can publish the following message in the &lt;code&gt;coffee-shop&lt;/code&gt; topic as: &lt;code&gt;{&amp;quot;coffee_type&amp;quot;: &amp;quot;espresso&amp;quot;, &amp;quot;cinnamon&amp;quot;: &amp;quot;true&amp;quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We can use the gcloud CLI to publish this message as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gcloud pubsub topics publish coffee-shop --message &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{&amp;#34;coffee_type&amp;#34;: &amp;#34;espresso&amp;#34;, &amp;#34;cinnamon&amp;#34;: &amp;#34;true&amp;#34;}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The gcloud CLI will publish the message on the &lt;code&gt;coffee-shop&lt;/code&gt; topic.&lt;/p&gt;
+&lt;p&gt;And then we&amp;rsquo;ll have our barista free to take a coffee order, They can use their subscription to consume the messages, We&amp;rsquo;ll use Gcloud CLI for it too:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gcloud pubsub subscriptions pull barista --limit=1 --auto-ack
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; We&amp;rsquo;re using the &lt;code&gt;--limit&lt;/code&gt; flag to make sure, we only receive one message from the topic.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; For the &lt;code&gt;--auto-ack&lt;/code&gt; flag to automatically acknowledge the message.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s available there to make sure the consumer receives the message successfully by acknowledging it&amp;rsquo;s receival.&lt;/p&gt;
+&lt;p&gt;We can also manually acknowledge the messages, &lt;a href=&#34;https://cloud.google.com/community/tutorials/pubsub-quickstart&#34;&gt;Click here&lt;/a&gt; to learn more about it.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Publish/subscribe messaging is when a publisher sends a message to a topic and the message is forwarded to a subscriber.&lt;/li&gt;
+&lt;li&gt;The concept of pub/sub is easy to understand but every coding and programming language handles it differently, making it a little more challenging to learn across all platforms.&lt;/li&gt;
+&lt;li&gt;On the edge, message delivery times can be two to four times faster by using a network backbone and multiple points of presence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank You for Reading ! Stay tuned, I&amp;rsquo;ll be writing more about GCP Products and my experience with them in the near future.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Running Pre-Built Binaries on Non-FHS *NIX Systems</title>
+      <link>/posts/binaries-on-non-fhs-system/</link>
+      <pubDate>Wed, 20 Jan 2021 00:28:56 +0500</pubDate>
+      
+      <guid>/posts/binaries-on-non-fhs-system/</guid>
+      <description>Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.
+We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.
+This exception occurs when it is unable to find one of the ELF libraries required to execute the binary.</description>
+      <content>&lt;p&gt;Executing pre-built binaries on a new system can be a troublesome task to perform. Several exceptions can occur causing the execution to fail.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll be looking at one of such that can occur on Linux systems quite often, which is: &lt;code&gt;The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be executed.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This exception occurs when it is unable to find one of the ELF libraries required to execute the binary.&lt;/p&gt;
+&lt;p&gt;In this blog post, we&amp;rsquo;ll be digging into it a little deeper to understand &amp;amp; find a solution:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;how-do-binaries-work-in-linux&#34;&gt;How do binaries work in Linux?&lt;/h1&gt;
+&lt;p&gt;Binaries are a set of instructions that are understood by the machine to perform a specific task.&lt;/p&gt;
+&lt;p&gt;Our day-to-day interaction with our terminal CLI (Command Line Interface) includes usage of programs like: &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;ls&lt;/code&gt;, &lt;code&gt;cd&lt;/code&gt;, etc., which are available typically in our: &lt;code&gt;/bin&lt;/code&gt; (binary) directory. Example: We can use &lt;code&gt;which&lt;/code&gt; (a binary itself) to find the location of the &lt;code&gt;bash&lt;/code&gt; program:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ which bash
+/bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This provides us information on where the program is located on the disk.&lt;/p&gt;
+&lt;p&gt;Similar to standards being followed in our day-to-day life, binaries also follow a certain standard known as &lt;strong&gt;ELF&lt;/strong&gt; or the Executable and Linkable Format.&lt;/p&gt;
+&lt;h2 id=&#34;elf-standard-for-binaries&#34;&gt;ELF Standard for Binaries&lt;/h2&gt;
+&lt;p&gt;ELF (Executable and Linkable Format) standard is used to let the Operating System know some information about how to execute the program.
+It&amp;rsquo;s something that we don&amp;rsquo;t interact with much on our daily basis, but can be quite helpful with debugging. ELF standard makes us extend our program to work efficiently at runtime.&lt;/p&gt;
+&lt;p&gt;Example: To run a C program, we don&amp;rsquo;t need the entire implementation of the C language itself in the codebase. Instead, we link a library (glibc) with our binary to let it know that it needs the C library to be executed.&lt;/p&gt;
+&lt;p&gt;Sounds pretty cool, right?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get back to the problem now.&lt;/p&gt;
+&lt;p&gt;As described earlier, the error: &lt;code&gt;The file &#39;&amp;lt;executable_file_name&amp;gt;&#39; does not exist or could not be found&lt;/code&gt; occurs whenever there&amp;rsquo;s a dependency on a library that the binary is not able to find.&lt;/p&gt;
+&lt;h3 id=&#34;lets-get-to-the-debugging-part&#34;&gt;Let&amp;rsquo;s get to the debugging part&lt;/h3&gt;
+&lt;p&gt;One thing that I love about UNIX-based systems is that we have the tools to debug almost everything. To get the list of dependencies or libraries required by a binary, we can use the &lt;code&gt;ldd&lt;/code&gt; command.
+It prints the shared libraries required by the program on the command line. As an example. let&amp;rsquo;s see what a pre-compiled binary of NodeJS requires:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ldd ./node
+
+		linux-vdso.so.1 (0x00007fff00bf9000)
+		libdl.so.2 =&amp;gt; /lib/libdl.so.2 (0x00007fc857f59000)
+		libstdc++.so.6 =&amp;gt; not found
+		libm.so.6 =&amp;gt; /lib/libm.so.6 (0x00007fc857e18000)
+		libgcc_s.so.1 =&amp;gt; /lib/libgcc_s.so.1 (0x00007fc857dfe000)
+		libpthread.so.0 =&amp;gt; /lib/libpthread.so.0 (0x00007fc857ddd000)
+		libc.so.6 =&amp;gt; /lib/libc.so.6 (0x00007fc857c1e000)
+		/lib64/ld-linux-x86-64.so.2 =&amp;gt; /lib64/ld-linux-x86-64.so.2 (0x00007fc857f60000)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Upon executing the program, it returns the following error:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ./node
+
+Failed to execute process &amp;#39;./node&amp;#39;. Reason:
+The file &amp;#39;./node&amp;#39; does not exist or could not be executed.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Do you know what the problem is? You guessed it right. It&amp;rsquo;s the &lt;code&gt;libstdc++.so.6&lt;/code&gt; library that is causing our binary to not execute.&lt;/p&gt;
+&lt;p&gt;Now that we know what&amp;rsquo;s causing the issue, let&amp;rsquo;s fix it.&lt;/p&gt;
+&lt;h4 id=&#34;for-fhs-filesystem-hirearchy-standard-distros-debian-ubuntu-etc&#34;&gt;For FHS (FileSystem Hirearchy Standard) Distros (Debian, Ubuntu, etc.)&lt;/h4&gt;
+&lt;p&gt;As in FHS systems, we make some assumptions regarding our system which includes that all the libraries will be in &lt;code&gt;/lib&lt;/code&gt; or relevant directories. It&amp;rsquo;s, then, easier to fix the issue.&lt;/p&gt;
+&lt;p&gt;In FHS standardized / compliant Linux distributions it can be easily solved by installing the relevant library&amp;rsquo;s package.&lt;/p&gt;
+&lt;p&gt;Example: For &lt;code&gt;libstdc++.6&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;On Debian/Ubuntu based distros: &lt;code&gt;apt-get install libstdc++6&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On CentOS/Fedora based distros: &lt;code&gt;yum install libstdcxx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once installed, it&amp;rsquo;ll be available in the &lt;code&gt;/lib&lt;/code&gt; directory resulting in the ELF loader to find the library in &lt;code&gt;/lib&lt;/code&gt;. You would then be able to execute &lt;code&gt;node&lt;/code&gt; as following:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ./node
+Welcome to Node.js v14.15.4.
+Type &amp;#34;.help&amp;#34; for more information
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Woohoo, it worked. Now let&amp;rsquo;s see how to fix it in non-FHS distributions, where we don&amp;rsquo;t have a global &lt;code&gt;/lib&lt;/code&gt; directory. :D&lt;/p&gt;
+&lt;h4 id=&#34;for-non-fhs-distros-nixos-etc&#34;&gt;For Non-FHS Distros (NixOS, etc):&lt;/h4&gt;
+&lt;p&gt;To maintain the non-global state of a system in non-FHS distributions, we would not be modifying the state of our system. We will be patching the ELF binary to work correctly. Example in NixOS:&lt;/p&gt;
+&lt;p&gt;NixOS provides a tool: &lt;a href=&#34;https://github.com/NixOS/patchelf&#34;&gt;patchelf&lt;/a&gt; which is a small utility that provides us the ability to patch pre-compiled binaries without having to play with machine code (0s and 1s).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started, we first need to find where out &lt;code&gt;libstdc++.so.6&lt;/code&gt; file lives in our &lt;code&gt;/nix/store&lt;/code&gt;, which can be found via the following shell function:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function find_stdcplusplus_in_nix_store(){
+		local _fileName=&amp;#34;libstdc++.so.6&amp;#34;;
+		ls /nix/store | grep &amp;#34;gcc&amp;#34; | grep &amp;#34;lib&amp;#34; \
+		| awk -v file=&amp;#34;${_fileName}&amp;#34; &amp;#39;{printf(&amp;#34;find /nix/store/%s -name %s\n&amp;#34;);}&amp;#39; | sh \
+		| awk -F&amp;#39;-&amp;#39; &amp;#39;{printf(&amp;#34;%s %s\n&amp;#34;, $3, $0);}&amp;#39; | sort | tail -n 1 | awk &amp;#39;{print $2;}&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It&amp;rsquo;ll return the full path of the library/the file name &lt;code&gt;libstdc++.so.6&lt;/code&gt;. It&amp;rsquo;ll be something like: &lt;code&gt;/nix/store/gcc-&amp;lt;hash&amp;gt;/lib/libstdc++.so.6&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We need to get to know the directory where our library lives. To find it, we can execute the following function:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+function find_stdcplusplus_parent_dir_in_nix_store(){
+		local _file=&amp;#34;$(find_stdcplusplus_in_nix_store)&amp;#34;;
+		dirname &amp;#34;${_file}&amp;#34;;
+}
+
+nix_store_location=$(find_stdcplusplus_dir_in_nix_store)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It returns the directory where the library exists i.e: &lt;code&gt;/nix/store/gcc-&amp;lt;hash&amp;gt;/lib&lt;/code&gt; and stores it in a global variable as &lt;code&gt;nix_store_location&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now it&amp;rsquo;s time for the final operation in which we will be creating shell environment/s with &lt;code&gt;patchelf&lt;/code&gt; using &lt;code&gt;nix-shell&lt;/code&gt; to patch the ELF binary:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+function patch_node_application(){
+		nix-shell -p patchelf --run &amp;#39;patchelf --set-rpath $nix_store_location bin/node&amp;#39;
+		nix-shell -p patchelf --run &amp;#39;patchelf --set-interpreter &amp;#34;$(cat $NIX_CC/nix-support/dynamic-linker)&amp;#34; bin/node&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The first line within the function adds an &lt;code&gt;rpath&lt;/code&gt; (runtime search path) to let our loader know that &lt;code&gt;libstdc++&lt;/code&gt; can be found in a specific directory in the Nix store.&lt;/p&gt;
+&lt;p&gt;The second line, with the ELF binary, the dynamic loader (ELF interpreter) is set to a static path which is generally not available under NixOS at: &lt;code&gt;lib64/ld-linux-x86-64.so.2&lt;/code&gt;. We&amp;rsquo;re changing it to the dynamic loader available at &lt;code&gt;$NIX_CC/nix-support/dynamic-linker&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After executing the function &lt;code&gt;patch_node_application&lt;/code&gt;, it&amp;rsquo;ll patch the &lt;code&gt;node&lt;/code&gt; binary and you&amp;rsquo;ll be able to execute it on NixOS.&lt;/p&gt;
+&lt;p&gt;To add the above script incorporated in your current build systems for NodeJS Projects, here&amp;rsquo;s a small addition to the shell script to only execute the function &lt;code&gt;patch_node_application&lt;/code&gt; (Responsible for patching the node binary) if it&amp;rsquo;s running on NixOS:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;...
+if [ &amp;#34;cat /etc/os-release | grep &amp;#39;nixos&amp;#39;&amp;#34; ]; then
+	patch_node_application
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now the shell script will only be executed if the system is running NixOS, and the &lt;code&gt;node&lt;/code&gt; binary can now be executed too.&lt;/p&gt;
+&lt;p&gt;Thank you for reading! I&amp;rsquo;ll be writing more about ELF and Nix in the future.&lt;/p&gt;
+&lt;p&gt;Looking forward to your feedback on the post.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thank You very much &lt;a href=&#34;https://cateroxl.github.io&#34;&gt;cateroxl&lt;/a&gt; for proofreading and editing the blog post.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Getting Started With Nix: Introduction</title>
+      <link>/posts/getting-started-with-nix-introduction/</link>
+      <pubDate>Wed, 16 Dec 2020 01:58:48 +0500</pubDate>
+      
+      <guid>/posts/getting-started-with-nix-introduction/</guid>
+      <description>Recently, I installed NixOS on one of my machines to explore the Nix ecosystem, and to learn how it makes the process of creating deterministic and reproducible builds efficient and simpler.
+This blog post series provides an introduction to the Nix package manager and how it works.
+What is Nix? Nix is a powerful, purely functional package manager designed to be a reliable and reproducible package-management system.
+Nix is also the primary package manager for NixOS and can also be installed as an additional package manager on Linux and Mac OS X.</description>
+      <content>&lt;p&gt;Recently, I installed NixOS on one of my machines to explore the Nix ecosystem, and to learn how it makes the process of creating deterministic and reproducible builds efficient and simpler.&lt;/p&gt;
+&lt;p&gt;This blog post series provides an introduction to the Nix package manager and how it works.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-nix&#34;&gt;What is Nix?&lt;/h2&gt;
+&lt;p&gt;Nix is a powerful, purely functional package manager designed to be a reliable and reproducible package-management system.&lt;/p&gt;
+&lt;p&gt;Nix is also the primary package manager for &lt;strong&gt;NixOS&lt;/strong&gt; and can also be installed as an additional package manager on Linux and Mac OS X.&lt;/p&gt;
+&lt;p&gt;It also offers the following features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Atomic Upgrades and Rollbacks;&lt;/li&gt;
+&lt;li&gt;Multiple versions of a package;&lt;/li&gt;
+&lt;li&gt;Multi-user package management, the ability to install certain packages for certain users only;&lt;/li&gt;
+&lt;li&gt;Effortless setup of build environments for a package, providing functional builds;&lt;/li&gt;
+&lt;li&gt;and many more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-nix-works&#34;&gt;How Nix Works&lt;/h2&gt;
+&lt;p&gt;Packages in the Nix ecosystem are built from Nix expressions, which is a simple functional language that enables the packaging aspect for Nix (The package manager).&lt;/p&gt;
+&lt;p&gt;A Nix expression describes everything that goes into a package build, e.g: other packages (dependencies), sources, config files, environment variables, external patches, etc.&lt;/p&gt;
+&lt;p&gt;A Nix expression results in a derivation, which is a build of the expression, that takes some inputs and produces an output, outputs are almost always some &lt;code&gt;/nix/store/some-hash-pkg-name&lt;/code&gt; path.&lt;/p&gt;
+&lt;p&gt;Below is an abstract diagram of how Nix expressions work:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/posts-static/nix-pkg-101/nix-expression-101.png&#34; alt=&#34;How Nix Expressions work&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, we&amp;rsquo;ve got an application written in C language and we&amp;rsquo;re creating a Nix expression for it, which includes some code patches, dependencies, configurations. The resultant derivation is then created in the Nix Store.&lt;/p&gt;
+&lt;h3 id=&#34;the-essence-of-nix-in-comparison-to-traditional-linux-systems&#34;&gt;The essence of Nix in comparison to traditional Linux systems:&lt;/h3&gt;
+&lt;p&gt;Nix emerges from the idea that &lt;strong&gt;FHS (Filesystem Hierarchy Standard) is fundamentally incompatible with reproducibility&lt;/strong&gt;. Let me explain now:&lt;/p&gt;
+&lt;p&gt;With traditional Linux systems and package managers, you&amp;rsquo;ll find paths like &lt;code&gt;/usr/bin/python&lt;/code&gt; or &lt;code&gt;/lib/libm.so&lt;/code&gt; where packages are installed. But there are a lot of things that we don&amp;rsquo;t know about the file that&amp;rsquo;s there, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What&amp;rsquo;s the version of the package the binary/library came from?&lt;/li&gt;
+&lt;li&gt;What are the libraries it uses?&lt;/li&gt;
+&lt;li&gt;What configure flags were enabled during the build?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These questions have a significant effect on the resulted build and can also change the behavior of the application.&lt;/p&gt;
+&lt;p&gt;Indeed, there are ways to get around this in FHS. We can link directly to &lt;code&gt;/lib/libm.so&lt;/code&gt; or use &lt;code&gt;/usr/bin/python3.7&lt;/code&gt; in our shebang, but then there will still be a lot of unknowns.&lt;/p&gt;
+&lt;p&gt;Nix plays a pretty essential role in fixing it, by isolating the build itself resulting in reproducible build artifacts.&lt;/p&gt;
+&lt;p&gt;On Nix systems, the file paths look like this: &lt;code&gt;/nix/store/&amp;lt;hash&amp;gt;-&amp;lt;name&amp;gt;-&amp;lt;version&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If there&amp;rsquo;s something you&amp;rsquo;re unable to grasp&amp;hellip;No worries! We&amp;rsquo;ll be exploring Nix further in the future with because this is only the first of the series.&lt;/p&gt;
+&lt;p&gt;Thank you for reading. In the next posts, we will be installing Nix and building some Nix expressions ourselves.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thank you very much &lt;a href=&#34;https://cateroxl.github.io&#34;&gt;cateroxl&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/HiraT97&#34;&gt;Hira Tariq&lt;/a&gt; for proofreading and providing your valuable feedback on the blog post.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: I Voted: Fedora 33 -- Participated in the Fedora 33 Elections!</title>
+      <link>/posts/badge-i-voted-f33/</link>
+      <pubDate>Mon, 30 Nov 2020 03:04:54 +0500</pubDate>
+      
+      <guid>/posts/badge-i-voted-f33/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+I Voted Fedora 33: What it&amp;rsquo;s about? The I Voted Fedora 33 Badge is categorized as Community Badge and it&amp;rsquo;s defined in this Pagure Ticket
+But What it&amp;rsquo;s all About ? In short, it&amp;rsquo;s what it says in the Description : &amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;. It is awarded to people who vote in the Fedora Elections.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/i-voted-f33.png&#34; alt=&#34;I Voted: Fedora 33 &amp;amp;ndash; Participated in the Fedora 33 Elections&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;i-voted-fedora-33-what-its-about&#34;&gt;I Voted Fedora 33: What it&amp;rsquo;s about?&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://badges.fedoraproject.org/badge/i-voted%3A-fedora-33&#34;&gt;I Voted Fedora 33 Badge&lt;/a&gt; is categorized as &lt;strong&gt;Community Badge&lt;/strong&gt; and it&amp;rsquo;s defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/725&#34;&gt;Pagure Ticket&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;but-what-its-all-about-&#34;&gt;But What it&amp;rsquo;s all About ?&lt;/h3&gt;
+&lt;p&gt;In short, it&amp;rsquo;s what it says in the Description : &lt;em&gt;&amp;ldquo;You participated in Fedora 33 Elections&amp;rdquo;&lt;/em&gt;. It is awarded to people who vote in the &lt;a href=&#34;https://elections.fedoraproject.org/&#34;&gt;Fedora Elections&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-are-fedora-elections-&#34;&gt;What are Fedora Elections ?&lt;/h4&gt;
+&lt;p&gt;Fedora has several elected bodies that regularly conduct elections every release cycle. In addition, Fedora teams can request one-off elections from the Fedora Program Manager when trying to select new leadership or otherwise reach a decision through a formal voting process.&lt;/p&gt;
+&lt;p&gt;We currently have 3 Open Elections, that takes place every release whenever we have a free seat including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FESCo (Engineering) [Fedora Engineering &amp;amp; Steering Committee]&lt;/li&gt;
+&lt;li&gt;Mindshare Committee. (Community) [I&amp;rsquo;m running for the Mindshare seat this year too]&lt;/li&gt;
+&lt;li&gt;Fedora Council.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-the-election-process-works-&#34;&gt;How the Election Process works ?&lt;/h4&gt;
+&lt;p&gt;Fedora Implements a &lt;strong&gt;Range voting system&lt;/strong&gt;, which works on the principle of allowing voters to rate as many candidates as they want on scale from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;4&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This method is designed to give voters the option of splitting their vote and showing their level of preference of a subset of candidates over another.&lt;/p&gt;
+&lt;p&gt;Once voting ends, votes are tallied using the summing method (addition of all votes) to generate a final score for a candidate.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-i-voted-fedora-33-&#34;&gt;How do I earn &amp;ldquo;I Voted: Fedora 33&amp;rdquo; ?&lt;/h2&gt;
+&lt;p&gt;Earning &lt;strong&gt;I Voted: Fedora 33&lt;/strong&gt; is pretty easy &amp;amp; can be only obtained till &lt;strong&gt;Thursday, December 3rd 2020, 23:59:59 UTC&lt;/strong&gt;, The process is pretty simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To vote for Different elections, there are different eligiblity crieteria:
+&lt;ul&gt;
+&lt;li&gt;To vote for the Fedora Council you must have &lt;em&gt;cla_done&lt;/em&gt; in FAS.&lt;/li&gt;
+&lt;li&gt;To vote for FESCo you must have &lt;em&gt;cla_done&lt;/em&gt; + one other &lt;em&gt;&amp;ldquo;non-cla&amp;rdquo;&lt;/em&gt; group in FAS.&lt;/li&gt;
+&lt;li&gt;To vote for Mindshare you must have a &lt;em&gt;cla_done&lt;/em&gt; in FAS.&lt;/li&gt;
+&lt;li&gt;In Case, You&amp;rsquo;re not eligible, You can create a ticket &lt;a href=&#34;https://pagure.io/fedora-project-schedule/new_issue&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Once you&amp;rsquo;re eligible, You can head over to the Fedora Elections App &lt;a href=&#34;https://elections.fedoraproject.org/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Login with your FAS ID.&lt;/li&gt;
+&lt;li&gt;One you&amp;rsquo;re logged in, A page would appear with a list of all the Open Election&lt;/li&gt;
+&lt;li&gt;Then you can click on &lt;code&gt;Vote Now&lt;/code&gt; in the Open election you would like to vote on.&lt;/li&gt;
+&lt;li&gt;The Voting page would appear with all the Candidates for the specific election along with their Interviews to get to know them better&lt;/li&gt;
+&lt;li&gt;Once you select the votes in the Range counter and when you would select Preview your Vote -&amp;gt; Submit Your Vote, A unique link would be generated to claim the badge.&lt;/li&gt;
+&lt;li&gt;On clicking the link, it would redirect you to a Fedora Badges link where you can sign in and it would automatically award you the badge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Best of Luck with Claiming the Badge.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: Fedora Social Panda</title>
+      <link>/posts/badge-fedora-social-hour/</link>
+      <pubDate>Fri, 01 May 2020 02:56:46 +0500</pubDate>
+      
+      <guid>/posts/badge-fedora-social-hour/</guid>
+      <description>This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+Fedora Social Panda: What&amp;rsquo;s it about? How It all Started is, As COVID-19 is getting pretty real and resulting in people performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated so out Fedora Project Leader Matthew Miller &amp;amp; Fedora Project Contributor Neal Gompa had the idea to have a Fedora Social Hour where folks could Chat &amp;amp; get a little e-human contact and conversation.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/virtual-social-hours-badge.png&#34; alt=&#34;Fedora Social Panda&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is originally inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fedora-social-panda-whats-it-about&#34;&gt;Fedora Social Panda: What&amp;rsquo;s it about?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;How It all Started is,&lt;/strong&gt; As COVID-19 is getting pretty real and resulting in people
+performing social distancing, shelter-in-place &amp;amp; Lockdowns resulting in most of us feeling pretty isolated
+so out Fedora Project Leader &lt;strong&gt;Matthew Miller&lt;/strong&gt; &amp;amp; Fedora Project Contributor &lt;strong&gt;Neal Gompa&lt;/strong&gt; had the idea to have a Fedora Social Hour
+where folks could Chat &amp;amp; get a little e-human contact and conversation.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s focus on the badge now, As we have activities in Fedora, We have Badges, the &lt;a href=&#34;https://badges.fedoraproject.org/badge/social-panda&#34;&gt;Fedora Social Panda&lt;/a&gt;
+badge is categorized as &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s crieteria is defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/731&#34;&gt;Pagure ticket&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In short, The &lt;em&gt;Fedora Social Panda&lt;/em&gt; Badge is awarded to folks we participate in a &lt;a href=&#34;https://communityblog.fedoraproject.org/come-socialize-at-the-fedora-social-hour-2/&#34;&gt;Fedora Social Hour&lt;/a&gt; with the Community.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-fedora-social-panda&#34;&gt;How do I earn &amp;ldquo;Fedora Social Panda&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;In order to earn this badge, you would have to join a weekly fedora social hour.&lt;/p&gt;
+&lt;h3 id=&#34;how-do-i-know-when-its-happening&#34;&gt;How do I know when it&amp;rsquo;s happening?&lt;/h3&gt;
+&lt;p&gt;To know when a Fedora Social Hour will be organized, Keep an eye on the &lt;a href=&#34;https://communityblog.fedoraproject.org/&#34;&gt;Fedora Community Blog&lt;/a&gt;, As that&amp;rsquo;s where most of the announcements are made for the Community.&lt;/p&gt;
+&lt;p&gt;Another preffered way is to keep an eye is by joining the &lt;a href=&#34;https://riot.im/app/#/room/#fedora-social-hour:matrix.org&#34;&gt;Fedora Social Hour&lt;/a&gt; on Riot.im, As this is where we have our Social Hours nowadays, as it has Jitsi &amp;amp; Etherpad widgets that we&amp;rsquo;ve implemented.&lt;/p&gt;
+&lt;p&gt;If you would like to stick with the Freenode IRC Channel, it&amp;rsquo;s &lt;code&gt;#fedora-social-hour&lt;/code&gt; on Freenode IRC that is bridged with the Matrix Room.&lt;/p&gt;
+&lt;p&gt;Once, You attend a Fedora Social Hour, you can share your &lt;code&gt;FAS ID&lt;/code&gt; for the organizers to award that badge to you.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Looking forward to see you all in the next Fedora Social Hour, I&amp;rsquo;m &lt;code&gt;nasirhm&lt;/code&gt; there. :D&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Gotta Badge &#39;Em All: Fedora &amp; CentOS Social @ Summit 2020</title>
+      <link>/posts/badge-fedora-centos-social-summit20/</link>
+      <pubDate>Wed, 29 Apr 2020 06:19:13 +0500</pubDate>
+      
+      <guid>/posts/badge-fedora-centos-social-summit20/</guid>
+      <description>This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about how to earn specific Fedora badges.
+Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about? The Fedora &amp;amp; CentOS Social @ Summit 2020 badge is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this Pagure ticket But what it&amp;rsquo;s all about?
+In short, the Fedora &amp;amp; CentOS Social @ Summit 2020 badge is awarded to people who attended the Red Hat Virtual Summit 2020 &amp;amp; Participated in The Fedora Chatroom on April 28-29.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/posts-static/gotta-fedora-badges/rh-2020-fedora-badge.png&#34; alt=&#34;Fedora &amp;amp; CentOS Social @ Summit 2020&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article is inspired by Justin W. Flory&amp;rsquo;s Gotta Badge `em All series about &lt;a href=&#34;https://blog.jwf.io/2015/11/gotta-badge-em-introduction-fedora-badges/&#34;&gt;how to earn specific Fedora badges&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fedora--centos-social--summit-2020-whats-it-about&#34;&gt;Fedora &amp;amp; CentOS Social @ Summit 2020: What&amp;rsquo;s it about?&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://badges.fedoraproject.org/badge/fedora--centos-social-%40-summit-2020&#34;&gt;Fedora &amp;amp; CentOS Social @ Summit 2020 badge&lt;/a&gt; is categorized as a &amp;ldquo;Event Badge&amp;rdquo; and it&amp;rsquo;s defined in this &lt;a href=&#34;https://pagure.io/fedora-badges/issue/735&#34;&gt;Pagure ticket&lt;/a&gt;
+&lt;em&gt;But what it&amp;rsquo;s all about&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;In short, the &lt;em&gt;Fedora &amp;amp; CentOS Social @ Summit 2020&lt;/em&gt; badge is awarded to people who attended the &lt;a href=&#34;https://www.redhat.com/en/summit&#34;&gt;Red Hat Virtual Summit 2020&lt;/a&gt; &amp;amp; Participated in The Fedora Chatroom on April 28-29.
+There are some really awesome Fedora &amp;amp; CentOS folks having some really insightful &amp;amp; fun discussions there. This badge is a fun way to represent your participation in the Redhat Virtual Summit 2020 on the Fedora &amp;amp; CentOS Chatroom.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-i-earn-fedora--centos-social--summit-2020-&#34;&gt;How Do i earn &amp;ldquo;Fedora &amp;amp; CentOS Social @ Summit 2020&amp;rdquo; ?&lt;/h2&gt;
+&lt;p&gt;Earning &lt;em&gt;Fedora &amp;amp; CentOS Social @ Summit 2020&lt;/em&gt; is pretty easy &amp;amp; can only be attained on April 28-29 2020. The steps are pretty Simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sign Up/Sign In for the &lt;a href=&#34;https://www.redhat.com/en/summit&#34;&gt;Redhat Virtual Summit 2020&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;After logging in, Goto, Explore -&amp;gt; Community Central -&amp;gt; Fedora/CentOS&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communicate&lt;/strong&gt; your thoughts/ideas in the live chat.&lt;/li&gt;
+&lt;li&gt;Dont&amp;rsquo;t forget to share your FAS id in the live chat, For the badge to be awarded. :D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;In Case, you don&amp;rsquo;t have a FAS Id, here&amp;rsquo;s a link to &lt;a href=&#34;https://admin.fedoraproject.org/accounts/user/new&#34;&gt;sign up&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : This &lt;em&gt;Badge&lt;/em&gt; can only be awarded on April 28-29 2020, As it&amp;rsquo;s about Redhat Virtual Summit, One Day&amp;rsquo;s left (When I&amp;rsquo;m writing this article).&lt;/p&gt;
+&lt;p&gt;Looking forward to see you all in the Fedora &amp;amp; CentOS Social at Redhat Summit.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Getting Started with Fedora QA - Part 1</title>
+      <link>/posts/getting-started-with-fedora-qa-part-1/</link>
+      <pubDate>Tue, 07 Apr 2020 17:29:03 +0500</pubDate>
+      
+      <guid>/posts/getting-started-with-fedora-qa-part-1/</guid>
+      <description>What is SQA (Quality Assurance) ? According to Wikipedia : Software quality assurance (SQA) is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.
+By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.</description>
+      <content>&lt;blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;what-is-sqa-quality-assurance-&#34;&gt;What is SQA (Quality Assurance) ?&lt;/h2&gt;
+&lt;p&gt;According to &lt;a href=&#34;https://en.wikipedia.org/wiki/Software_quality_assurance&#34;&gt;Wikipedia&lt;/a&gt; : &lt;strong&gt;Software quality assurance (SQA)&lt;/strong&gt; is a means of monitoring the software engineering processes and methods used to ensure proper quality. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification.&lt;/p&gt;
+&lt;p&gt;By simplifying, Software Quality Assurance is a way to ensure that the Code/Software that a developer has written has been tested across different mediums and produces the expected results.&lt;/p&gt;
+&lt;h2 id=&#34;why-quality-assurance-is-an-essential-component-for-fedora-project&#34;&gt;Why Quality Assurance is an essential component for Fedora Project&lt;/h2&gt;
+&lt;p&gt;Fedora is an Open Source Linux distribution Operating System which releases once in every six months and as a result the environment becomes very fast paced and that could make things break among general users of the distro, to prevent that to happening to users &amp;amp; to make sure everything works as expected, Quality Assurance is a must in Fedora Project. In Fedora, we have to encompass the user experience as there are thousands and thousands of people who expect a more stable &amp;amp; feature enriched OS that gets better with each release.&lt;/p&gt;
+&lt;h2 id=&#34;fedora-release-cycle&#34;&gt;Fedora Release Cycle&lt;/h2&gt;
+&lt;p&gt;Before we jump into practical tools, let&amp;rsquo;s have a quick introduction to how the process works&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/posts-static/getting-started-with-fedora-qa/fedorareleasecycle.png#align:left&#34; alt=&#34;Fedora Release Cycle&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The above diagram displays a clear demonstration of how Fedora creates it&amp;rsquo;s release&lt;/p&gt;
+&lt;p&gt;It includes these branches:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rawhide&lt;/strong&gt; serves as the upstream for the release branch, it&amp;rsquo;s a bleeding edge, non freezing branch where contributors consitently push their packages, after a time slice we branch out different necessary packages and the Rawhide keeps on growing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Branched Release&lt;/strong&gt; is the version which gets branched out from the ongoing Rawhide &amp;amp; starts to get tested &amp;amp; refines for the release. As we reach this point, the QA team gets hands on with it :)&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;h3 id=&#34;fas-id--httpsadminfedoraprojectorgaccountshttpsadminfedoraprojectorgaccounts&#34;&gt;FAS ID : &lt;a href=&#34;https://admin.fedoraproject.org/accounts/&#34;&gt;https://admin.fedoraproject.org/accounts/&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A FAS (Fedora Account System) account is essential for you to get login access to all subprojects in Fedora with the same user ID and passwords.&lt;/p&gt;
+&lt;h3 id=&#34;bugzilla--httpsbugzillaredhatcomhttpsbugzillaredhatcom&#34;&gt;Bugzilla : &lt;a href=&#34;https://bugzilla.redhat.com/&#34;&gt;https://bugzilla.redhat.com/&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Bugzilla serves as the bug tracking system for Fedora Project, with Bugzilla you can create &amp;amp; verify bugs along with fixing some! :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To register on Bugzilla&lt;/strong&gt;, We recommend using your &lt;code&gt;@fedoraproject.org&lt;/code&gt; email Alias, because in different places for QA you would require it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; : If you don&amp;rsquo;t have a &lt;code&gt;@fedoraproject.org&lt;/code&gt; email Alias, We have a good news for you, you can reach out to us on &lt;a href=&#34;https://docs.fedoraproject.org/en-US/fedora-join/&#34;&gt;Fedora Join&lt;/a&gt; and we can provide you a temporary membership, which would give you the ability to attain your email Alias.&lt;/p&gt;
+&lt;p&gt;After setting up your accounts, you can reach out to the &lt;em&gt;QA Team&lt;/em&gt; on &lt;strong&gt;IRC&lt;/strong&gt;, As it&amp;rsquo;s the place where most of the QA team is available, The channel for Fedora QA is: &lt;code&gt;#fedora-qa&lt;/code&gt; and for Matrix users, It&amp;rsquo;s: &lt;code&gt;#freenode_#fedora-qa:matrix.org&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Another alternative to IRC, is mailing lists where you can have discussions with Fedora QA team, in case if you need any clarification or being faced by issues. Mailing list requires you to subscribe to it before you can post/ask/talk. The fedora QA mailing list resides here : &lt;a href=&#34;https://lists.fedoraproject.org/admin/lists/test.lists.fedoraproject.org/&#34;&gt;test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To subscribe to the mailing list you would need a FAS ID too.&lt;/p&gt;
+&lt;p&gt;Best of luck for starting QA with Fedora Project.&lt;/p&gt;
+&lt;p&gt;The next post would be more about getting involved and hands on with QA.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Thank You for reading, if you have any doubts or questions feel free to reach out to me here : &lt;a href=&#34;/contact/&#34;&gt;Contact&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
